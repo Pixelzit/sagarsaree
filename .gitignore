@@ -110,9 +110,7 @@ build/
 # --------------------------------------------------
 !/wp-content/plugins/
 !/wp-content/mu-plugins/
-/wp-content/plugins/all-in-one-wp-migration/storage/
-/wp-content/plugins/all-in-one-wp-migration-unlimited-extension/
-/wp-content/plugins/all-in-one-wp-migration/
+/wp-content/plugins/all-in-one-wp-migration/storage
 
 # Ignore all themes
 /wp-content/themes/*
