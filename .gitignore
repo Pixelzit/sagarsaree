@@ -1,2 +1,11 @@
-/wp-content/
 wp-config.php
+/wp-content/uploads
+/wp-content/temp-write-test-*
+
+
+# Ignore all themes
+/wp-content/themes/*
+
+# Keep only required themes
+!/wp-content/themes/storefront/
+!/wp-content/themes/storefront-child/

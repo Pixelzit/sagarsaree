@@ -1,0 +1,8 @@
+[17-Mar-2026 16:49:46 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home1/qpcvphmy/public_html/wp-content/themes/storefront/index.php:14
+Stack trace:
+#0 {main}
+  thrown in /home1/qpcvphmy/public_html/wp-content/themes/storefront/index.php on line 14
+[17-Mar-2026 16:49:46 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home1/qpcvphmy/public_html/wp-content/themes/storefront/index.php:14
+Stack trace:
+#0 {main}
+  thrown in /home1/qpcvphmy/public_html/wp-content/themes/storefront/index.php on line 14
