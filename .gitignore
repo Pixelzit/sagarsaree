@@ -9,3 +9,4 @@ wp-config.php
 # Keep only required themes
 !/wp-content/themes/storefront/
 !/wp-content/themes/storefront-child/
+/wp-content/themes/storefront-child/node_modules
