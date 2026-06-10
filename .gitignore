@@ -1,0 +1,130 @@
+# --------------------------------------------------
+# OS Files
+# --------------------------------------------------
+.DS_Store
+Thumbs.db
+
+# --------------------------------------------------
+# IDE / Editor
+# --------------------------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --------------------------------------------------
+# Logs
+# --------------------------------------------------
+*.log
+error_log
+debug.log
+
+# --------------------------------------------------
+# Environment Files
+# --------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# --------------------------------------------------
+# WordPress Core
+# --------------------------------------------------
+/wp-admin/
+/wp-includes/
+
+# Root WordPress files
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+/xmlrpc.php
+
+# Allow important custom files
+!/wp-config-sample.php
+
+# --------------------------------------------------
+# Uploads
+# --------------------------------------------------
+/wp-content/uploads/
+
+# --------------------------------------------------
+# Cache
+# --------------------------------------------------
+/wp-content/cache/
+/wp-content/advanced-cache.php
+
+# --------------------------------------------------
+# Backup Plugins
+# --------------------------------------------------
+/wp-content/ai1wm-backups/
+/wp-content/updraft/
+/wp-content/backup-db/
+/wp-content/backups/
+/wp-content/upgrade/
+/wp-content/temp-write-test-*
+
+# --------------------------------------------------
+# Cache & Optimization Plugins
+# --------------------------------------------------
+/wp-content/wflogs/
+/wp-content/litespeed/
+/wp-content/wp-rocket-config/
+/wp-content/cache-config/
+
+# --------------------------------------------------
+# Languages (optional)
+# --------------------------------------------------
+/wp-content/languages/
+
+# --------------------------------------------------
+# Temporary Files
+# --------------------------------------------------
+*.tmp
+*.bak
+*.swp
+
+# --------------------------------------------------
+# Node
+# --------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --------------------------------------------------
+# Composer
+# --------------------------------------------------
+vendor/
+
+# Uncomment if you want to ignore composer.lock
+# composer.lock
+
+# --------------------------------------------------
+# Build Files
+# --------------------------------------------------
+dist/
+build/
+
+# --------------------------------------------------
+# Keep Themes & Plugins
+# --------------------------------------------------
+!/wp-content/plugins/
+!/wp-content/mu-plugins/
+/wp-content/plugins/all-in-one-wp-migration/storage/
+/wp-content/plugins/all-in-one-wp-migration-unlimited-extension/
+/wp-content/plugins/all-in-one-wp-migration/
+
+# Ignore all themes
+/wp-content/themes/*
+
+# Keep only required themes
+!/wp-content/themes/storefront/
+!/wp-content/themes/storefront-child/
+
+/wp-content/themes/storefront-child/node_modules
+
+
+# Apache / LocalWP
+.htaccess
+.htaccess.nfd-backup
+local-xdebuginfo.php
