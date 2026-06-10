@@ -15,14 +15,16 @@ module.exports = function(grunt) {
 		}
 	  },
 	  watch: {
-	  sass: {
-		files: ['**/*.scss'],
-		tasks: ['sass'],
-		options: {
-		  spawn: false,
+		sass: {
+		  files: ['assets/sass/**/*.scss'],
+		  tasks: ['sass'],
+		  options: {
+			spawn: false,
+			interrupt: true,
+			atBegin: true,
+		  },
 		},
 	  },
-	},
   });
   
   grunt.loadNpmTasks('grunt-contrib-sass');

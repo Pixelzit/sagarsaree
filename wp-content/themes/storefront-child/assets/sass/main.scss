@@ -1,5 +1,9 @@
-@import 'header';
-@import 'footer';
+@use 'colors';
+@use 'header';
+@use 'footer';
+@use 'home-services-shortcode';
+@use 'home';
+
 body{
     font-family: 'Karla', sans-serif !important;
 }

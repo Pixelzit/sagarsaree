@@ -2,10 +2,13 @@
 function pxlt_astra_child_enqueue_styles() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'));
+    wp_enqueue_style('child-main-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array());
 }
 add_action('wp_enqueue_scripts', 'pxlt_astra_child_enqueue_styles');
 
 require_once get_stylesheet_directory() . '/pxlt-template-functions.php';
+require_once get_stylesheet_directory() . '/inc/shortcodes/home-page-banner-slider.php';
+require_once get_stylesheet_directory() . '/inc/shortcodes/home-services-shortcode.php';
 
 add_action( 'widgets_init', 'pxlt_widgets' );
 function pxlt_widgets(){
