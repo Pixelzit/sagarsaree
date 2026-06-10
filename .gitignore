@@ -62,6 +62,9 @@ debug.log
 /wp-content/backups/
 /wp-content/upgrade/
 /wp-content/temp-write-test-*
+/wp-content/index.php
+/wp-content/jetpack-waf/
+/wp-content/upgrade-temp-backup/
 
 # --------------------------------------------------
 # Cache & Optimization Plugins
