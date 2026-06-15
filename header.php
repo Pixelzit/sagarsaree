@@ -1,0 +1,58 @@
+<?php
+/**
+ * The header for our theme.
+ *
+ * Displays all of the <head> section and everything up till <div id="content">
+ *
+ * @package storefront
+ */
+
+?><!doctype html>
+<html <?php language_attributes(); ?>>
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- <link rel="stylesheet" href="<?php //echo get_stylesheet_directory_uri(); ?>/assets/css/main.css"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+<?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+
+<?php wp_body_open(); ?>
+
+<?php do_action( 'storefront_before_site' ); ?>
+
+<div id="page" class="hfeed site">
+	<?php do_action( 'storefront_before_header' ); ?>
+
+	<?php /* ?>
+	<header id="masthead" class="site-header pxlt-header-wrap" role="banner" style="<?php storefront_header_styles(); ?>">
+		<?php		
+		do_action( 'storefront_header' );
+		?>
+	</header><!-- #masthead -->
+	<?php */ ?>
+
+	<?php
+	/**
+	 * Functions hooked in to storefront_before_content
+	 *
+	 * @hooked storefront_header_widget_region - 10
+	 * @hooked woocommerce_breadcrumb - 10
+	 */
+	do_action( 'storefront_before_content' );
+	?>
+
+
+	<div id="content" class="site-content" tabindex="-1">
+		<!-- <div class="col-full"> -->
+
+		<?php
+		do_action( 'storefront_content_top' );
