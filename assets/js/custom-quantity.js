@@ -56,93 +56,187 @@ jQuery(window).on('scroll', function () {
 
 
 jQuery(document).ready(function ($) {
-    var $slider = $('.shop-by-occasion-slider');
+    // [product_categories parent=""  number="8" hide_empty=""] shortcode ul to div
+    $('.woocommerce ul.products').each(function () {
+        // ul -> div
+        $(this).replaceWith(function () {
+            return $('<div/>', {
+                class: this.className,
+                html: $(this).html()
+            });
+        });
+
+        // li -> div
+        $('.woocommerce .product-category').replaceWith(function () {
+            return $('<div/>', {
+                class: this.className,
+                html: $(this).html()
+            });
+        });
+        $('.woocommerce .product').replaceWith(function () {
+            return $('<div/>', {
+                class: this.className,
+                html: $(this).html()
+            });
+        });
+    });
 
     function initOccasionSlider() {
-        if (window.innerWidth < 1024) {
-            if (!$slider.hasClass('slick-initialized')) {
-                $slider.slick({
-                    dots: false,
-                    arrows: true,
-                    infinite: true,
-                    speed: 500,
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
+        var $occasionSlider = $(".shop-by-occasion-slider");
 
-                    responsive: [
-                        {
-                            breakpoint: 767,
-                            settings: {
-                                slidesToShow: 2
-                            }
-                        },
-                        {
-                            breakpoint: 576,
-                            settings: {
-                                slidesToShow: 1
-                            }
-                        }
-                    ]
-                });
-            }
+        if (window.innerWidth < 1441) {
+            $occasionSlider.each(function () {
+                var $this = $(this);
+
+                if (!$this.hasClass("slick-initialized")) {
+                    $this.slick({
+                        dots: true,
+                        arrows: false,
+                        infinite: true,
+                        speed: 500,
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        prevArrow:
+                            '<button type="button" class="slick-prev" aria-label="Previous"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>',
+                        nextArrow:
+                            '<button type="button" class="slick-next" aria-label="Next"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>',
+                        responsive: [
+                            {
+                                breakpoint: 767,
+                                settings: {
+                                    slidesToShow: 2,
+                                },
+                            },
+                            {
+                                breakpoint: 601,
+                                settings: {
+                                    slidesToShow: 1,
+                                },
+                            },
+                        ],
+                    });
+                }
+            });
         } else {
-            if ($slider.hasClass('slick-initialized')) {
-                $slider.slick('unslick');
-            }
+            $occasionSlider.each(function () {
+                var $this = $(this);
+
+                if ($this.hasClass("slick-initialized")) {
+                    $this.slick("unslick");
+                }
+            });
         }
     }
 
-    initOccasionSlider();
+    function initFabricSlider() {
+        var $fabricSlider = $(".shop-by-febric-list .products");
 
-    $(window).on('resize', function () {
-        initOccasionSlider();
-    });
-});
+        if (window.innerWidth < 1441) {
+            $fabricSlider.each(function () {
+                var $this = $(this);
 
-
-
-jQuery(window).on('load', function () {
-
-    const $products = jQuery('.shop-by-febric-list ul.products');
-
-    if (window.innerWidth < 1440 && !$products.hasClass('swiper-wrapper')) {
-
-        // wrapper
-        $products.wrap('<div class="swiper fabric-swiper"></div>');
-
-        const $swiper = $products.parent();
-
-        // arrows add
-        $swiper.append('<div class="swiper-button-prev"></div>');
-        $swiper.append('<div class="swiper-button-next"></div>');
-
-        $products.addClass('swiper-wrapper');
-        $products.children('li').addClass('swiper-slide');
-
-        new Swiper('.fabric-swiper', {
-            slidesPerView: 4,
-            spaceBetween: 20,
-
-            navigation: {
-                nextEl: '.fabric-swiper .swiper-button-next',
-                prevEl: '.fabric-swiper .swiper-button-prev'
-            },
-
-            breakpoints: {
-                // 0: {
-                //     slidesPerView: 2.2
-                // },
-                576: {
-                    slidesPerView: 1.2
-                },
-                768: {
-                    slidesPerView: 2
-                },
-                1024: {
-                    slidesPerView: 4
+                if (!$this.hasClass("slick-initialized")) {
+                    $this.slick({
+                        dots: true,
+                        arrows: false,
+                        infinite: true,
+                        speed: 600,
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                        prevArrow:
+                            '<button type="button" class="slick-prev" aria-label="Previous"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>',
+                        nextArrow:
+                            '<button type="button" class="slick-next" aria-label="Next"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>',
+                        responsive: [
+                            {
+                                breakpoint: 991,
+                                settings: {
+                                    slidesToShow: 3,
+                                },
+                            },
+                            {
+                                breakpoint: 767,
+                                settings: {
+                                    slidesToShow: 2,
+                                },
+                            },
+                            {
+                                breakpoint: 601,
+                                settings: {
+                                    slidesToShow: 1,
+                                },
+                            },
+                        ],
+                    });
                 }
-            }
-        });
+            });
+        } else {
+            $fabricSlider.each(function () {
+                var $this = $(this);
+
+                if ($this.hasClass("slick-initialized")) {
+                    $this.slick("unslick");
+                }
+            });
+        }
     }
 
+    function initBestSellerSlider() {
+        var $bestSellerSlider = $(".best-seller-products .products");
+
+        if (window.innerWidth < 1201) {
+            $bestSellerSlider.each(function () {
+                var $this = $(this);
+
+                if (!$this.hasClass("slick-initialized")) {
+                    $this.slick({
+                        dots: true,
+                        arrows: false,
+                        infinite: true,
+                        speed: 600,
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        prevArrow:
+                            '<button type="button" class="slick-prev" aria-label="Previous"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>',
+                        nextArrow:
+                            '<button type="button" class="slick-next" aria-label="Next"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>',
+                        responsive: [
+                            {
+                                breakpoint: 768,
+                                settings: {
+                                    slidesToShow: 2,
+                                },
+                            },
+                            {
+                                breakpoint: 601,
+                                settings: {
+                                    slidesToShow: 1,
+                                },
+                            },
+                        ],
+                    });
+                }
+            });
+        } else {
+            $bestSellerSlider.each(function () {
+                var $this = $(this);
+
+                if ($this.hasClass("slick-initialized")) {
+                    $this.slick("unslick");
+                }
+            });
+        }
+    }
+
+    // Init
+    initOccasionSlider();
+    initFabricSlider();
+    initBestSellerSlider();
+
+    // Resize
+    $(window).on("resize", function () {
+        initOccasionSlider();
+        initFabricSlider();
+        initBestSellerSlider();
+    });
 });
