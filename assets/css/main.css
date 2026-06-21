@@ -429,14 +429,21 @@
 @media (max-width: 1024px) {
   .site-main-navigation .elementor-menu-toggle {
     position: absolute;
-    top: -80px;
+    top: -83px;
     left: 0;
     z-index: 100000 !important;
     transition: left 0.3s ease;
+    padding: 8px !important;
+    background-color: var(--color-hover) !important;
+    color: var(--color-white) !important;
+  }
+  .site-main-navigation .elementor-menu-toggle svg {
+    fill: var(--color-white);
   }
   .site-main-navigation .elementor-menu-toggle.elementor-active {
-    color: var(--color-hover, #cfa353) !important;
+    top: -100px;
     left: 280px;
+    border-radius: 100%;
   }
   .site-main-navigation .elementor-nav-menu__container {
     position: fixed !important;
@@ -452,13 +459,16 @@
     visibility: hidden !important;
     opacity: 0 !important;
     overflow-y: auto !important;
-    padding: 100px 20px 30px !important;
+    padding: 80px 0 30px !important;
     margin: 0 !important;
   }
   .site-main-navigation .elementor-nav-menu__container[aria-hidden=false] {
     left: 0 !important;
     visibility: visible !important;
     opacity: 1 !important;
+  }
+  .site-main-navigation .elementor-nav-menu__container .sub-arrow {
+    display: inline-flex;
   }
   .site-main-navigation .elementor-nav-menu__container ul {
     padding: 0 !important;
