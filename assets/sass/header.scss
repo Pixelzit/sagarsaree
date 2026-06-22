@@ -588,14 +588,22 @@
     @media(max-width: 1024px) {
         .elementor-menu-toggle {
             position: absolute;
-            top: -80px;
+            top: -83px;
             left: 0;
             z-index: 100000 !important;
             transition: left 0.3s ease;
+            padding: 8px !important;
+            background-color: var(--color-hover) !important;
+            color: var(--color-white) !important;
+
+            svg {
+                fill: var(--color-white);
+            }
 
             &.elementor-active {
-                color: var(--color-hover, #cfa353) !important;
+                top: -100px;
                 left: 280px;
+                border-radius: 100%;
             }
         }
 
@@ -613,13 +621,17 @@
             visibility: hidden !important;
             opacity: 0 !important;
             overflow-y: auto !important;
-            padding: 100px 20px 30px !important;
+            padding: 80px 0 30px !important;
             margin: 0 !important;
 
             &[aria-hidden="false"] {
                 left: 0 !important;
                 visibility: visible !important;
                 opacity: 1 !important;
+            }
+
+            .sub-arrow {
+                display: inline-flex;
             }
 
             ul {
