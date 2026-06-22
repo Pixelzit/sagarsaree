@@ -147,6 +147,12 @@
         display: flex;
         column-gap: 20px;
     }
+
+    @media (max-width: 767px) {
+        .slick-track {
+            column-gap: 8px;
+        }
+    }
 }
 
 .shop-occasion-card {
@@ -197,10 +203,15 @@
             h2 {
                 font-family: "Poppins", Sans-serif !important;
                 font-size: 18px !important;
-                font-weight: 600 !important;
+                font-weight: 500 !important;
                 line-height: 1.5em !important;
                 padding: 15px;
                 margin: 0 !important;
+
+                @media (max-width: 767px) {
+                    font-size: 16px !important;
+                    padding: 8px;
+                }
             }
 
             .price {
@@ -218,6 +229,11 @@
                 ins {
                     font-weight: 600;
                 }
+
+                @media (max-width: 767px) {
+                    font-size: 16px !important;
+                    padding-inline: 8px !important;
+                }
             }
 
             .button {
@@ -230,8 +246,6 @@
                 color: var(--color-white);
                 border: 2px solid var(--e-global-color-primary);
                 border-radius: 50px !important;
-
-
 
                 &:hover {
                     background-color: var(--color-white) !important;
@@ -289,7 +303,16 @@
                 padding-inline: 15px;
             }
         }
+    }
 
+    @media (max-width: 767px) {
+        .products {
+            margin-inline: -8px;
+
+            .product-category {
+                padding-inline: 8px;
+            }
+        }
     }
 }
 
@@ -298,6 +321,12 @@
     .slick-track {
         display: flex;
         column-gap: 20px;
+    }
+
+    @media (max-width: 767px) {
+        .slick-track {
+            column-gap: 8px;
+        }
     }
 
     .products {
@@ -325,8 +354,18 @@
             margin-inline: -10px;
 
             .type-product {
-                padding-inline: 10px;
+                // padding-inline: 10px;
                 margin-bottom: 0 !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .product {
+                .button {
+                    font-size: 14px !important;
+                    line-height: 1.2em !important;
+                    margin: 8px !important;
+                }
             }
         }
 

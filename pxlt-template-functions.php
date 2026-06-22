@@ -209,3 +209,9 @@ function pxlt_view_size_chart() {
 }
 add_action('woocommerce_single_product_summary', 'pxlt_view_size_chart', 25);
 
+// upload svg
+function allow_svg_upload($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'allow_svg_upload');

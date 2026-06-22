@@ -107,12 +107,12 @@ jQuery(document).ready(function ($) {
                                     slidesToShow: 2,
                                 },
                             },
-                            {
-                                breakpoint: 601,
-                                settings: {
-                                    slidesToShow: 1,
-                                },
-                            },
+                            // {
+                            //     breakpoint: 601,
+                            //     settings: {
+                            //         slidesToShow: 1,
+                            //     },
+                            // },
                         ],
                     });
                 }
@@ -160,12 +160,12 @@ jQuery(document).ready(function ($) {
                                     slidesToShow: 2,
                                 },
                             },
-                            {
-                                breakpoint: 601,
-                                settings: {
-                                    slidesToShow: 1,
-                                },
-                            },
+                            // {
+                            //     breakpoint: 601,
+                            //     settings: {
+                            //         slidesToShow: 1,
+                            //     },
+                            // },
                         ],
                     });
                 }
@@ -207,12 +207,12 @@ jQuery(document).ready(function ($) {
                                     slidesToShow: 2,
                                 },
                             },
-                            {
-                                breakpoint: 601,
-                                settings: {
-                                    slidesToShow: 1,
-                                },
-                            },
+                            // {
+                            //     breakpoint: 601,
+                            //     settings: {
+                            //         slidesToShow: 1,
+                            //     },
+                            // },
                         ],
                     });
                 }

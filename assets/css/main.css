@@ -709,6 +709,11 @@
   display: flex;
   column-gap: 20px;
 }
+@media (max-width: 767px) {
+  .shop-by-occasion-slider .slick-track {
+    column-gap: 8px;
+  }
+}
 
 .shop-occasion-card:before {
   content: "";
@@ -741,10 +746,16 @@
 #primary .products .product h2 {
   font-family: "Poppins", Sans-serif !important;
   font-size: 18px !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   line-height: 1.5em !important;
   padding: 15px;
   margin: 0 !important;
+}
+@media (max-width: 767px) {
+  #primary .products .product h2 {
+    font-size: 16px !important;
+    padding: 8px;
+  }
 }
 #primary .products .product .price {
   display: block;
@@ -759,6 +770,12 @@
 }
 #primary .products .product .price ins {
   font-weight: 600;
+}
+@media (max-width: 767px) {
+  #primary .products .product .price {
+    font-size: 16px !important;
+    padding-inline: 8px !important;
+  }
 }
 #primary .products .product .button {
   margin: 15px !important;
@@ -811,10 +828,23 @@
     padding-inline: 15px;
   }
 }
+@media (max-width: 767px) {
+  .shop-by-febric-list .products {
+    margin-inline: -8px;
+  }
+  .shop-by-febric-list .products .product-category {
+    padding-inline: 8px;
+  }
+}
 
 #primary .best-seller-products .slick-track {
   display: flex;
   column-gap: 20px;
+}
+@media (max-width: 767px) {
+  #primary .best-seller-products .slick-track {
+    column-gap: 8px;
+  }
 }
 #primary .best-seller-products .products:before, #primary .best-seller-products .products:after {
   display: none !important;
@@ -836,8 +866,14 @@
     margin-inline: -10px;
   }
   #primary .best-seller-products .products .type-product {
-    padding-inline: 10px;
     margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  #primary .best-seller-products .products .product .button {
+    font-size: 14px !important;
+    line-height: 1.2em !important;
+    margin: 8px !important;
   }
 }
 #primary .best-seller-products .products .type-product {
@@ -1522,20 +1558,6 @@ form input {
   .archive .site-main ul.products.columns-4 li.product:nth-child(even) {
     margin-right: 0 !important;
   }
-  #primary .products .type-product h2.woocommerce-loop-product__title {
-    font-size: 14px !important;
-    height: 36px;
-  }
-  #primary .products .type-product .price bdi {
-    font-size: 12px;
-  }
-  #primary .products .type-product .add_to_cart_button,
-  #primary .products .type-product button {
-    font-size: 12px;
-  }
-  #primary header h1 {
-    font-size: 34px;
-  }
 }
 @media only screen and (max-width: 767px) {
   #primary .type-product .woocommerce-LoopProduct-link {
@@ -1649,20 +1671,6 @@ form input {
 @media only screen and (max-width: 480px) {
   .single-product .product .summary.entry-summary .cart button[type=submit] {
     width: 31.66%;
-  }
-  #primary .products .type-product h2.woocommerce-loop-product__title {
-    font-size: 12px !important;
-    line-height: 20px;
-  }
-  #primary .type-product .woocommerce-LoopProduct-link span.onsale {
-    font-size: 10px;
-    right: 0;
-  }
-  #primary header h1 {
-    font-size: 22px;
-  }
-  #primary .site-main form.woocommerce-ordering select.orderby {
-    padding: 3px 5px;
   }
   .pagination .page-numbers li .page-numbers,
   .woocommerce-pagination .page-numbers li .page-numbers {
