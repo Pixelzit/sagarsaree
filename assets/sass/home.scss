@@ -117,9 +117,9 @@
 .home-wholesale-body {
     >.elementor-element {
         @media (min-width: 1025px) {
-            &:not(:last-child) {
-                border-right: 2px dashed var(--color-golden-light);
-            }
+            // &:not(:last-child) {
+            //     border-right: 2px dashed var(--color-golden-light);
+            // }
 
             .elementor-heading-title {
                 min-height: 60px;
