@@ -592,18 +592,26 @@
             left: 0;
             z-index: 100000 !important;
             transition: left 0.3s ease;
-            padding: 8px !important;
-            background-color: var(--color-hover) !important;
-            color: var(--color-white) !important;
+            padding: 0 !important;
+            background-color: transparent !important;
+            color: var(--color-dark) !important;
 
             svg {
-                fill: var(--color-white);
+                fill: var(--color-dark);
             }
 
             &.elementor-active {
-                top: -100px;
-                left: 280px;
+                position: fixed;
+                top: 90px;
+                left: 300px;
                 border-radius: 100%;
+                background-color: var(--color-hover) !important;
+                color: var(--color-white) !important;
+                padding: 8px !important;
+
+                svg {
+                    fill: var(--color-white) !important;
+                }
             }
         }
 
