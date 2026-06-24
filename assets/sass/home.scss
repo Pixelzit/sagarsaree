@@ -129,33 +129,47 @@
 
 .home-wholesale-body {
     >.elementor-element {
-        // @media (min-width: 1025px) {
-        //     &:not(:last-child) {
-        //         border-right: 2px dashed var(--color-golden-light);
-        //     }
-
-        //     .elementor-heading-title {
-        //         min-height: 60px;
-        //     }
-        // }
-
-        // @media (min-width: 768px) and (max-width: 1024px) {
-        //     &:nth-child(odd) {
-        //         border-right: 2px dashed var(--color-golden-light);
-        //     }
-        // }
-
-        // @media (max-width: 767px) {
-        //     &:not(:last-child) {
-        //         border-bottom: 2px dashed var(--color-golden-light);
-        //     }
-        // }
-
         .elementor-heading-title {
             align-content: center;
         }
     }
+
+    &.slick-slider {
+        .slick-track {
+            display: flex;
+            column-gap: 30px;
+        }
+
+        .elementor-column,
+        .elementor-element {
+            margin-bottom: 0 !important;
+            padding-inline: 15px;
+        }
+
+        @media (max-width: 991px) {
+            .slick-track {
+                column-gap: 20px;
+            }
+
+            .elementor-column,
+            .elementor-element {
+                padding-inline: 10px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .slick-track {
+                column-gap: 16px;
+            }
+
+            .elementor-column,
+            .elementor-element {
+                padding-inline: 8px;
+            }
+        }
+    }
 }
+
 
 
 .shop-by-occasion-slider {
@@ -262,6 +276,7 @@
                 color: var(--color-white);
                 border: 2px solid var(--e-global-color-primary);
                 border-radius: 50px !important;
+                text-align: center;
 
                 &:hover {
                     background-color: var(--color-white) !important;
@@ -356,6 +371,7 @@
             border: 1px solid rgb(93, 14, 19, 0.1);
             border-radius: 30px;
             overflow: hidden;
+            height: auto;
 
             img {
                 width: 100%;
@@ -364,13 +380,24 @@
                 aspect-ratio: 0.8/1;
             }
 
+            .woocommerce-loop-product__link {
+                position: relative;
+            }
+
             span.onsale {
+                position: absolute;
                 left: 12px;
                 top: 12px;
                 margin: 0;
                 padding: 12px 24px;
                 border-radius: 29px;
                 background: rgba(236, 180, 28, 0.5);
+                color: #fff;
+                line-height: 16px;
+
+                @media (max-width: 767px) {
+                    font-size: 12px;
+                }
 
                 &:before {
                     display: none;
