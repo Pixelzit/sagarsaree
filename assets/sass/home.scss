@@ -65,6 +65,11 @@
                 width: 60px;
                 height: 60px;
                 object-fit: contain;
+
+                @media (max-width: 767px) {
+                    width: 40px;
+                    height: 40px;
+                }
             }
         }
 
@@ -77,6 +82,10 @@
                 color: var(--color-dark);
                 line-height: 1.2;
                 white-space: nowrap;
+
+                @media (max-width: 767px) {
+                    font-size: 16px;
+                }
             }
 
             p {
@@ -84,6 +93,10 @@
                 font-size: 14px;
                 color: var(--text-dark);
                 line-height: 1.5;
+
+                @media (max-width: 767px) {
+                    margin-top: 4px !important;
+                }
             }
         }
     }
@@ -116,15 +129,15 @@
 
 .home-wholesale-body {
     >.elementor-element {
-        @media (min-width: 1025px) {
-            &:not(:last-child) {
-                border-right: 2px dashed var(--color-golden-light);
-            }
+        // @media (min-width: 1025px) {
+        //     &:not(:last-child) {
+        //         border-right: 2px dashed var(--color-golden-light);
+        //     }
 
-            .elementor-heading-title {
-                min-height: 60px;
-            }
-        }
+        //     .elementor-heading-title {
+        //         min-height: 60px;
+        //     }
+        // }
 
         // @media (min-width: 768px) and (max-width: 1024px) {
         //     &:nth-child(odd) {
@@ -339,6 +352,32 @@
             display: none !important;
         }
 
+        .type-product {
+            border: 1px solid rgb(93, 14, 19, 0.1);
+            border-radius: 30px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                object-position: top center;
+                aspect-ratio: 0.8/1;
+            }
+
+            span.onsale {
+                left: 12px;
+                top: 12px;
+                margin: 0;
+                padding: 12px 24px;
+                border-radius: 29px;
+                background: rgba(236, 180, 28, 0.5);
+
+                &:before {
+                    display: none;
+                }
+            }
+        }
+
         // Desktop Grid View
         @media (min-width: 1201px) {
             display: grid;
@@ -364,24 +403,23 @@
 
         @media (max-width: 767px) {
             .product {
+                h2 {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    /* kitni lines dikhani hain */
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-height: 74px;
+                    padding: 0 8px !important;
+                    margin-block: 10px !important;
+                }
+
                 .button {
                     font-size: 14px !important;
                     line-height: 1.2em !important;
                     margin: 8px !important;
                 }
-            }
-        }
-
-        .type-product {
-            border: 1px solid rgb(93, 14, 19, 0.1);
-            border-radius: 30px;
-            overflow: hidden;
-
-            img {
-                width: 100%;
-                object-fit: cover;
-                object-position: top center;
-                aspect-ratio: 0.8/1;
             }
         }
     }
