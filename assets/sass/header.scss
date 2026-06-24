@@ -511,6 +511,8 @@
 
 
 .header-search-wrap {
+    z-index: 1;
+
     .e-search-form {
         margin-bottom: 0;
     }
@@ -666,6 +668,80 @@
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+/* Elementor Menu Open Styles */
+body.elementor-menu-open {
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+
+#elementor-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    /* Sleek, premium blur effect */
+    -webkit-backdrop-filter: blur(4px);
+    /* Safari compatibility */
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.elementor-menu-open #elementor-menu-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+#wcc-sticky-list-wrapper {
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+}
+
+/* Sticky Navigation for screens > 1025px */
+@media (min-width: 1025px) {
+    .main-navigation-wrap {
+        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), top 0.4s ease;
+
+        &.is-sticky-scroll-down {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            background-color: #ffffff;
+            /* Sticky header background */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(0);
+        }
+
+        &.is-hidden-scroll-up {
+            position: fixed !important;
+            top: -120px;
+            /* Offset to hide completely */
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            transform: translateY(-100%);
+            box-shadow: none;
+        }
+    }
+}
+
+/* Admin bar compatibility for sticky navigation */
+.admin-bar {
+    @media (min-width: 1026px) {
+        .main-navigation-wrap {
+            &.is-sticky-scroll-down {
+                top: 32px;
             }
         }
     }
