@@ -81,46 +81,35 @@ jQuery(document).ready(function ($) {
         });
     });
 
-    function initOccasionSlider() {
-        var $occasionSlider = $(".shop-by-occasion-slider");
 
-        if (window.innerWidth < 1441) {
-            $occasionSlider.each(function () {
+
+    // home page sliders
+    var prevArrowSvg = '<button type="button" class="slick-prev" aria-label="Previous"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>';
+    var nextArrowSvg = '<button type="button" class="slick-next" aria-label="Next"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>';
+
+    function initResponsiveSlider(selector, initBreakpoint, slickSettings) {
+        var $slider = $(selector);
+        if ($slider.length === 0) return;
+
+        if (window.innerWidth < initBreakpoint) {
+            $slider.each(function () {
                 var $this = $(this);
-
                 if (!$this.hasClass("slick-initialized")) {
-                    $this.slick({
+                    $this.slick($.extend(true, {
                         dots: true,
                         arrows: false,
                         infinite: true,
                         speed: 500,
                         slidesToShow: 3,
                         slidesToScroll: 1,
-                        prevArrow:
-                            '<button type="button" class="slick-prev" aria-label="Previous"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>',
-                        nextArrow:
-                            '<button type="button" class="slick-next" aria-label="Next"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>',
-                        responsive: [
-                            {
-                                breakpoint: 767,
-                                settings: {
-                                    slidesToShow: 2,
-                                },
-                            },
-                            // {
-                            //     breakpoint: 601,
-                            //     settings: {
-                            //         slidesToShow: 1,
-                            //     },
-                            // },
-                        ],
-                    });
+                        prevArrow: prevArrowSvg,
+                        nextArrow: nextArrowSvg
+                    }, slickSettings));
                 }
             });
         } else {
-            $occasionSlider.each(function () {
+            $slider.each(function () {
                 var $this = $(this);
-
                 if ($this.hasClass("slick-initialized")) {
                     $this.slick("unslick");
                 }
@@ -128,165 +117,70 @@ jQuery(document).ready(function ($) {
         }
     }
 
-    function initFabricSlider() {
-        var $fabricSlider = $(".shop-by-febric-list .products");
+    function initAllSliders() {
+        initResponsiveSlider(".shop-by-occasion-slider", 1441, {
+            slidesToShow: 3,
+            responsive: [
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 2,
+                    },
+                },
+            ],
+        });
 
-        if (window.innerWidth < 1441) {
-            $fabricSlider.each(function () {
-                var $this = $(this);
+        initResponsiveSlider(".shop-by-febric-list .products", 1441, {
+            speed: 600,
+            slidesToShow: 4,
+            responsive: [
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 2,
+                    },
+                },
+            ],
+        });
 
-                if (!$this.hasClass("slick-initialized")) {
-                    $this.slick({
-                        dots: true,
-                        arrows: false,
-                        infinite: true,
-                        speed: 600,
-                        slidesToShow: 4,
-                        slidesToScroll: 1,
-                        prevArrow:
-                            '<button type="button" class="slick-prev" aria-label="Previous"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>',
-                        nextArrow:
-                            '<button type="button" class="slick-next" aria-label="Next"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>',
-                        responsive: [
-                            {
-                                breakpoint: 991,
-                                settings: {
-                                    slidesToShow: 3,
-                                },
-                            },
-                            {
-                                breakpoint: 767,
-                                settings: {
-                                    slidesToShow: 2,
-                                },
-                            },
-                            // {
-                            //     breakpoint: 601,
-                            //     settings: {
-                            //         slidesToShow: 1,
-                            //     },
-                            // },
-                        ],
-                    });
-                }
-            });
-        } else {
-            $fabricSlider.each(function () {
-                var $this = $(this);
+        initResponsiveSlider(".home-wholesale-body", 1441, {
+            slidesToShow: 3,
+            responsive: [
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 2,
+                    },
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 2,
+                    },
+                },
+            ],
+        });
 
-                if ($this.hasClass("slick-initialized")) {
-                    $this.slick("unslick");
-                }
-            });
-        }
-    }
-
-    function initBestSellerSlider() {
-        var $bestSellerSlider = $(".best-seller-products .products");
-
-        if (window.innerWidth < 1201) {
-            $bestSellerSlider.each(function () {
-                var $this = $(this);
-
-                if (!$this.hasClass("slick-initialized")) {
-                    $this.slick({
-                        dots: true,
-                        arrows: false,
-                        infinite: true,
-                        speed: 600,
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        prevArrow:
-                            '<button type="button" class="slick-prev" aria-label="Previous"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>',
-                        nextArrow:
-                            '<button type="button" class="slick-next" aria-label="Next"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>',
-                        responsive: [
-                            {
-                                breakpoint: 768,
-                                settings: {
-                                    slidesToShow: 2,
-                                },
-                            },
-                            // {
-                            //     breakpoint: 601,
-                            //     settings: {
-                            //         slidesToShow: 1,
-                            //     },
-                            // },
-                        ],
-                    });
-                }
-            });
-        } else {
-            $bestSellerSlider.each(function () {
-                var $this = $(this);
-
-                if ($this.hasClass("slick-initialized")) {
-                    $this.slick("unslick");
-                }
-            });
-        }
-    }
-
-    function initWholesaleSlider() {
-        var $wholesaleSlider = $(".home-wholesale-body");
-
-        if (window.innerWidth < 1441) {
-            $wholesaleSlider.each(function () {
-                var $this = $(this);
-
-                if (!$this.hasClass("slick-initialized")) {
-                    $this.slick({
-                        dots: true,
-                        arrows: false,
-                        infinite: true,
-                        speed: 500,
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        prevArrow:
-                            '<button type="button" class="slick-prev" aria-label="Previous"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>',
-                        nextArrow:
-                            '<button type="button" class="slick-next" aria-label="Next"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>',
-                        responsive: [
-                            {
-                                breakpoint: 991,
-                                settings: {
-                                    slidesToShow: 2,
-                                },
-                            },
-                            {
-                                breakpoint: 767,
-                                settings: {
-                                    slidesToShow: 1,
-                                },
-                            },
-                        ],
-                    });
-                }
-            });
-        } else {
-            $wholesaleSlider.each(function () {
-                var $this = $(this);
-
-                if ($this.hasClass("slick-initialized")) {
-                    $this.slick("unslick");
-                }
-            });
-        }
+        initResponsiveSlider(".best-seller-products .products", 1201, {
+            speed: 600,
+            slidesToShow: 3,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                    },
+                },
+            ],
+        });
     }
 
     // Init
-    initOccasionSlider();
-    initFabricSlider();
-    initBestSellerSlider();
-    initWholesaleSlider();
+    initAllSliders();
 
     // Resize
     $(window).on("resize", function () {
-        initOccasionSlider();
-        initFabricSlider();
-        initBestSellerSlider();
-        initWholesaleSlider();
+        initAllSliders();
     });
 });
 
