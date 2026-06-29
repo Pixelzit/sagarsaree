@@ -9,8 +9,8 @@ module.exports = function(grunt) {
 			style: 'expanded'
 		  },
 		  files: {                         // Dictionary of files
-			'assets/css/main.css': 'assets/sass/main.scss'       // 'destination': 'source'
-			
+			'assets/css/main.css': 'assets/sass/main.scss',       // 'destination': 'source'
+			'assets/css/header.css': 'assets/sass/header.scss'
 		  }
 		}
 	  },
