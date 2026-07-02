@@ -57,7 +57,7 @@ jQuery(window).on('scroll', function () {
 
 jQuery(document).ready(function ($) {
     // [product_categories parent=""  number="8" hide_empty=""] shortcode ul to div
-    $('.woocommerce ul.products').each(function () {
+    $('.home .woocommerce ul.products').each(function () {
         // ul -> div
         $(this).replaceWith(function () {
             return $('<div/>', {
@@ -67,13 +67,13 @@ jQuery(document).ready(function ($) {
         });
 
         // li -> div
-        $('.woocommerce .product-category').replaceWith(function () {
+        $('.home .woocommerce .product-category').replaceWith(function () {
             return $('<div/>', {
                 class: this.className,
                 html: $(this).html()
             });
         });
-        $('.woocommerce .product').replaceWith(function () {
+        $('.home .woocommerce .product').replaceWith(function () {
             return $('<div/>', {
                 class: this.className,
                 html: $(this).html()
