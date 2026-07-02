@@ -17,6 +17,7 @@ if ( ! is_active_sidebar( 'filter-sidebar' ) ) {
 	<!-- <div class="custom-apply">
 		<?php
 			echo do_shortcode('[br_filter_single filter_id=2902]');
+			// echo do_shortcode('[br_filters_group group_id=3136]');
 		?>
 	</div> -->
 </div>
