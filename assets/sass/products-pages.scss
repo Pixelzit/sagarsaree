@@ -616,3 +616,8 @@
         font-size: 1.4em !important;
     }
 }
+
+
+.berocket_aapf_widget_selected_area:not(:has(> *)) {
+    display: none;
+}

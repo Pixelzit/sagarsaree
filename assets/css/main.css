@@ -575,6 +575,10 @@
     font-size: 1.4em !important;
   }
 }
+.berocket_aapf_widget_selected_area:not(:has(> *)) {
+  display: none;
+}
+
 .sagarsaree-banner-slider .elementor-swiper-button {
   background-color: rgba(255, 255, 255, 0.4);
   padding: 4px;
