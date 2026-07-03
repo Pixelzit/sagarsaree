@@ -107,8 +107,13 @@ function pxlt_custom_actions() {
     remove_action( 'woocommerce_before_shop_loop', 'storefront_woocommerce_pagination', 30 );
     remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
 
-    if ( is_product_category() && is_active_sidebar( 'filter-sidebar' ) ) {
+    if ( ( is_product_category() || is_shop() || is_product_taxonomy() ) && ( is_active_sidebar( 'filter-sidebar' ) || is_active_sidebar( 'sidebar-1' ) ) ) {
         add_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+        remove_action( 'storefront_sidebar', 'storefront_get_sidebar', 10 );
+    }
+
+    if ( is_product() ) {
+        remove_action( 'storefront_sidebar', 'storefront_get_sidebar', 10 );
     }
 }
 

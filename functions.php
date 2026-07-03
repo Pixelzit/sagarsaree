@@ -26,11 +26,15 @@ function pxlt_widgets(){
 }
 
 function custom_body_class( $classes ) {
-    if ( is_product_category() && is_active_sidebar( 'filter-sidebar' ) ) {
+    if ( ( is_product_category() || is_shop() || is_product_taxonomy() ) && ( is_active_sidebar( 'filter-sidebar' ) || is_active_sidebar( 'sidebar-1' ) ) ) {
         $key = array_search( 'storefront-full-width-content', $classes );
-        if ( $key ) {
+        if ( $key !== false ) {
             unset( $classes[$key] );
         }
+    }
+
+    if ( is_product() ) {
+        $classes[] = 'storefront-full-width-content';
     }
 
     return $classes;

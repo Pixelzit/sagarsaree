@@ -165,7 +165,12 @@
 }
 
 @media(max-width: 767px) {
+    .storefront-handheld-footer-bar ul li>a {
+        height: 67px !important;
+    }
+
     .footer-width-fixer {
-        padding-bottom: 76px;
+        padding-bottom: 134px;
+        background-color: #120C0B;
     }
 }
