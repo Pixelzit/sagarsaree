@@ -124,6 +124,22 @@
     padding-bottom: 120px !important;
   }
 }
+@media (max-width: 767px) {
+  .site-footer {
+    display: block;
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .storefront-handheld-footer-bar ul li > a {
+    height: 67px !important;
+  }
+  .footer-width-fixer {
+    padding-bottom: 134px;
+    background-color: #120C0B;
+  }
+}
 #primary .products:before, #primary .products:after {
   display: none !important;
 }

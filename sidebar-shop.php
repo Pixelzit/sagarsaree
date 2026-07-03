@@ -5,7 +5,12 @@
  * @package storefront
  */
 
-if ( ! is_active_sidebar( 'filter-sidebar' ) ) {
+$sidebar_id = 'filter-sidebar';
+if ( ! is_active_sidebar( $sidebar_id ) ) {
+	$sidebar_id = 'sidebar-1';
+}
+
+if ( ! is_active_sidebar( $sidebar_id ) ) {
 	return;
 }
 ?>
@@ -23,5 +28,5 @@ if ( ! is_active_sidebar( 'filter-sidebar' ) ) {
 </div>
 
 <div id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'filter-sidebar' ); ?>
+	<?php dynamic_sidebar( $sidebar_id ); ?>
 </div>
