@@ -579,6 +579,12 @@
   display: none;
 }
 
+.woocommerce-page .storefront-breadcrumb,
+.woocommerce-page .site-content {
+  max-width: 1720px;
+  margin-inline: auto;
+}
+
 .sagarsaree-banner-slider .elementor-swiper-button {
   background-color: rgba(255, 255, 255, 0.4);
   padding: 4px;

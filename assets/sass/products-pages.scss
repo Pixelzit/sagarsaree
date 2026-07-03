@@ -621,3 +621,12 @@
 .berocket_aapf_widget_selected_area:not(:has(> *)) {
     display: none;
 }
+
+.woocommerce-page {
+
+    .storefront-breadcrumb,
+    .site-content {
+        max-width: 1720px;
+        margin-inline: auto;
+    }
+}
