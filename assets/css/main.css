@@ -124,6 +124,18 @@
     padding-bottom: 120px !important;
   }
 }
+@media (max-width: 767px) {
+  .site-footer {
+    display: block;
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-width-fixer {
+    padding-bottom: 76px;
+  }
+}
 #primary .products:before, #primary .products:after {
   display: none !important;
 }

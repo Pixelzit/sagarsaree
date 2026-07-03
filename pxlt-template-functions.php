@@ -176,6 +176,17 @@ function pxlt_wishlist_link() {
     }
 }
 
+add_action( 'wp_footer', 'pxlt_add_handheld_footer_bar_to_wp_footer', 999 );
+function pxlt_add_handheld_footer_bar_to_wp_footer() {
+	if ( did_action( 'storefront_footer' ) ) {
+		return;
+	}
+	if ( function_exists( 'storefront_handheld_footer_bar' ) ) {
+		storefront_handheld_footer_bar();
+	}
+}
+
+
 function pxlt_add_wishlist_btn_for_mobile_view(){
     ?>
     <div class="custom-wishlist">
