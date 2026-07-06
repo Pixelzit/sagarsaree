@@ -267,4 +267,23 @@ jQuery(document).ready(function ($) {
     });
 });
 
+jQuery(document).ready(function ($) {
+    // Make the entire .shop-occasion-card clickable by triggering the inner button link
+    $(document).on('click', '.shop-occasion-card', function (e) {
+        // If the user clicked directly on a link or button, let the browser handle it
+        if ($(e.target).closest('a, button, input, select, textarea').length) {
+            return;
+        }
 
+        var $link = $(this).find('.shop-occasion-cta .elementor-button-link');
+        var href = $link.attr('href');
+        if (href) {
+            var target = $link.attr('target');
+            if (target === '_blank') {
+                window.open(href, '_blank');
+            } else {
+                window.location.href = href;
+            }
+        }
+    });
+});

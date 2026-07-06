@@ -734,6 +734,9 @@
   }
 }
 
+.shop-occasion-card {
+  cursor: pointer;
+}
 .shop-occasion-card:before {
   content: "";
   position: absolute;

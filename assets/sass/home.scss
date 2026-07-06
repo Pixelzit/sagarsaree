@@ -186,6 +186,8 @@
 }
 
 .shop-occasion-card {
+    cursor: pointer;
+
     &:before {
         content: '';
         position: absolute;
