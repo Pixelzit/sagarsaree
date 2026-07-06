@@ -243,6 +243,11 @@
   padding: 10px 8px;
   border: 1px solid #000 !important;
 }
+@media (max-width: 1024px) {
+  #primary .products .type-product .yith-wcwl-add-to-wishlist-button {
+    bottom: 16em;
+  }
+}
 #primary .products .type-product .yith-add-to-wishlist-button-block {
   display: block;
   width: auto;
@@ -824,6 +829,18 @@
   object-position: top center;
   aspect-ratio: 0.8/1;
 }
+#primary .best-seller-products .products .type-product .yith-add-to-wishlist-button-block {
+  position: absolute;
+  bottom: 12em;
+  right: 10px;
+}
+#primary .best-seller-products .products .type-product .yith-wcwl-add-to-wishlist-button {
+  position: static !important;
+  border-radius: 0;
+  text-align: center;
+  padding: 10px 8px;
+  border: 1px solid #000 !important;
+}
 #primary .best-seller-products .products .type-product .woocommerce-loop-product__link {
   position: relative;
 }
@@ -881,7 +898,6 @@
   #primary .best-seller-products .products .product .button {
     font-size: 14px !important;
     line-height: 1.2em !important;
-    margin: 8px !important;
   }
 }
 
