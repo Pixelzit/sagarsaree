@@ -81,6 +81,23 @@ jQuery(document).ready(function ($) {
         });
     });
 
+    // Re-initialize YITH Wishlist components on the homepage after replacement
+    function reinitWishlist() {
+        var $wishlistBlocks = $('.yith-add-to-wishlist-button-block');
+        if ($wishlistBlocks.length) {
+            $wishlistBlocks.removeClass('yith-add-to-wishlist-button-block--initialized').empty();
+            $(document).trigger('yith_wcwl_init');
+            if (window.wp && window.wp.hooks) {
+                window.wp.hooks.doAction('yith_wcwl_init_add_to_wishlist_components');
+            }
+        }
+    }
+    reinitWishlist();
+    // Fallback: Run again after a short delay to ensure any async loaded wishlist scripts pick it up
+    setTimeout(reinitWishlist, 100);
+    setTimeout(reinitWishlist, 500);
+
+
 
 
     // home page sliders
@@ -267,4 +284,23 @@ jQuery(document).ready(function ($) {
     });
 });
 
+jQuery(document).ready(function ($) {
+    // Make the entire .shop-occasion-card clickable by triggering the inner button link
+    $(document).on('click', '.shop-occasion-card', function (e) {
+        // If the user clicked directly on a link or button, let the browser handle it
+        if ($(e.target).closest('a, button, input, select, textarea').length) {
+            return;
+        }
 
+        var $link = $(this).find('.shop-occasion-cta .elementor-button-link');
+        var href = $link.attr('href');
+        if (href) {
+            var target = $link.attr('target');
+            if (target === '_blank') {
+                window.open(href, '_blank');
+            } else {
+                window.location.href = href;
+            }
+        }
+    });
+});

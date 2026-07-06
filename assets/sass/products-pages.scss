@@ -163,6 +163,10 @@
                 text-align: center;
                 padding: 10px 8px;
                 border: 1px solid #000 !important;
+
+                @media (max-width: 1024px) {
+                    bottom: 16em;
+                }
             }
 
             .yith-add-to-wishlist-button-block {

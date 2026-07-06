@@ -186,6 +186,8 @@
 }
 
 .shop-occasion-card {
+    cursor: pointer;
+
     &:before {
         content: '';
         position: absolute;
@@ -311,6 +313,20 @@
                 aspect-ratio: 0.8/1;
             }
 
+            .yith-add-to-wishlist-button-block {
+                position: absolute;
+                bottom: 12em;
+                right: 10px;
+            }
+
+            .yith-wcwl-add-to-wishlist-button {
+                position: static !important;
+                border-radius: 0;
+                text-align: center;
+                padding: 10px 8px;
+                border: 1px solid #000 !important;
+            }
+
             .woocommerce-loop-product__link {
                 position: relative;
             }
@@ -376,7 +392,6 @@
                 .button {
                     font-size: 14px !important;
                     line-height: 1.2em !important;
-                    margin: 8px !important;
                 }
             }
         }
