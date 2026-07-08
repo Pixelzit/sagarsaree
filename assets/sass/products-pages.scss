@@ -561,7 +561,7 @@
 
         .type-product .woocommerce-LoopProduct-link span.onsale {
             font-size: 10px;
-            right: 0;
+            right: auto;
         }
 
         header h1 {
@@ -650,18 +650,22 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        background-color: #000 !important;
+        background-color: var(--color-hover) !important;
         color: #fff !important;
-        border: 1px solid #000 !important;
+        border: 1px solid var(--color-hover) !important;
         border-radius: 0px !important;
         padding: 12px 20px !important;
         font-family: "Futura", Sans-serif !important;
-        font-size: 14px !important;
+        font-size: 16px !important;
         font-weight: 500 !important;
         text-transform: uppercase !important;
         cursor: pointer;
         transition: all 0.3s ease;
         line-height: 1 !important;
+
+        @media (max-width: 767px) {
+            font-size: 14px !important;
+        }
 
         svg.whatsapp-btn-icon {
             width: 16px;
@@ -678,79 +682,13 @@
             color: #000 !important;
         }
     }
-
-    .original-image-info-boxes {
-        display: flex;
-        gap: 15px;
-        margin-top: 15px;
-        max-width: 400px;
-
-        @media (max-width: 767px) {
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .info-box {
-            flex: 1;
-            border: 1px solid #e0e0e0;
-            background: #fbfbfb;
-            padding: 12px 15px;
-            border-radius: 4px;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            text-decoration: none !important;
-            color: #333 !important;
-            transition: all 0.3s ease;
-
-            &.sku-box {
-                border-left: 3px solid #666;
-            }
-
-            &.whatsapp-box {
-                border-left: 3px solid #25d366;
-                cursor: pointer;
-
-                &:hover {
-                    border-color: #128c7e;
-                    background: #f4fff6;
-                    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.15);
-
-                    .info-value {
-                        color: #128c7e !important;
-                    }
-                }
-            }
-
-            .info-label {
-                font-size: 11px;
-                text-transform: uppercase;
-                color: #777;
-                font-family: "Futura", Sans-serif;
-                font-weight: 500;
-                letter-spacing: 0.5px;
-            }
-
-            .info-value {
-                font-size: 15px;
-                font-weight: 600;
-                color: #111;
-                font-family: "Futura", Sans-serif;
-                word-break: break-all;
-
-                &.whatsapp-link {
-                    color: #25d366;
-                }
-            }
-        }
-    }
 }
 
 
 // single page style
 .size_grid {
     text-align: left !important;
-    margin: 0 !important;
+    margin-inline: 0 !important;
     margin-bottom: 20px !important;
     background: #eeeeee;
     border-radius: 5px;
