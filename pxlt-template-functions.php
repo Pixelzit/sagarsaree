@@ -245,24 +245,14 @@ function pxlt_add_get_original_image_button() {
     }
     
     $message = sprintf( 'Hello, I want to request the original image for product SKU: %s', $sku );
-    $whatsapp_url = 'https://wa.me/918847386700?text=' . rawurlencode( $message );
+    $whatsapp_url = 'https://wa.me/8858099308?text=' . rawurlencode( $message );
     
     ?>
     <div class="pxlt-original-image-container">
-        <button type="button" class="pxlt-get-original-image-btn button alt">
-            <svg class="whatsapp-btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; margin-right: 8px; vertical-align: middle; display: inline-block;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        <a href="<?php echo esc_url( $whatsapp_url ); ?>" target="_blank" class="pxlt-get-original-image-btn button alt">
+            <svg class="whatsapp-btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Get live image
-        </button>
-        <div class="original-image-info-boxes" style="display: none;">
-            <div class="info-box sku-box">
-                <span class="info-label">Product SKU</span>
-                <span class="info-value"><?php echo esc_html( $sku ); ?></span>
-            </div>
-            <a href="<?php echo esc_url( $whatsapp_url ); ?>" target="_blank" class="info-box whatsapp-box">
-                <span class="info-label">WhatsApp Us</span>
-                <span class="info-value">95699 69047</span>
-            </a>
-        </div>
+        </a>
     </div>
     <?php
 }
