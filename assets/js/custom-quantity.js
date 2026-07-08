@@ -304,3 +304,11 @@ jQuery(document).ready(function ($) {
         }
     });
 });
+
+jQuery(document).ready(function ($) {
+    // Toggle original image info boxes on product detail page
+    $(document).on('click', '.pxlt-get-original-image-btn', function (e) {
+        e.preventDefault();
+        $(this).siblings('.original-image-info-boxes').slideToggle(300);
+    });
+});
