@@ -31,7 +31,6 @@
                 margin: 0 !important;
 
                 @media (max-width: 767px) {
-                    font-size: 16px !important;
                     padding: 8px;
                 }
             }
@@ -214,15 +213,19 @@
             margin-bottom: 0;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
         }
 
         form.woocommerce-ordering {
-            position: absolute;
-            top: 0;
-            right: 0;
+            @media (min-width: 768px) {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
 
             select.orderby {
+                font-family: Playfair Display;
+                font-size: 16px;
                 background: #fff;
                 border-color: transparent;
                 padding: 10px 5px;
@@ -362,26 +365,6 @@
                 margin-right: 0 !important;
             }
         }
-    }
-
-    #primary .products .type-product {
-        h2.woocommerce-loop-product__title {
-            font-size: 14px !important;
-            // height: 36px;
-        }
-
-        .price bdi {
-            font-size: 12px;
-        }
-
-        .add_to_cart_button,
-        button {
-            font-size: 12px;
-        }
-    }
-
-    #primary header h1 {
-        font-size: 34px;
     }
 }
 
@@ -548,28 +531,6 @@
             .custom-wishlist .yith-add-to-wishlist-button-block {
                 width: 31.66%;
             }
-        }
-    }
-
-    #primary {
-        .products .type-product {
-            h2.woocommerce-loop-product__title {
-                font-size: 12px !important;
-                line-height: 20px;
-            }
-        }
-
-        .type-product .woocommerce-LoopProduct-link span.onsale {
-            font-size: 10px;
-            right: auto;
-        }
-
-        header h1 {
-            font-size: 22px;
-        }
-
-        .site-main form.woocommerce-ordering select.orderby {
-            padding: 3px 5px;
         }
     }
 

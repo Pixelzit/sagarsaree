@@ -245,7 +245,7 @@ function pxlt_add_get_original_image_button() {
     }
     
     $message = sprintf( 'Hello, I want to request the original image for product SKU: %s', $sku );
-    $whatsapp_url = 'https://wa.me/8858099308?text=' . rawurlencode( $message );
+    $whatsapp_url = 'https://wa.me/918858099308?text=' . rawurlencode( $message );
     
     ?>
     <div class="pxlt-original-image-container">
