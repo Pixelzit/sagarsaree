@@ -414,7 +414,7 @@
   #primary .type-product .woocommerce-LoopProduct-link span.onsale {
     position: absolute;
     top: 0;
-    right: 3px;
+    right: auto;
     background: #000;
     color: #fff;
   }
@@ -501,9 +501,6 @@
   .related .products li.product:nth-child(even) {
     margin-right: 0;
   }
-  .related .products li.product:nth-child(odd) {
-    margin-left: 12px;
-  }
   #pxlt_tab_content {
     display: none;
   }
@@ -519,7 +516,7 @@
     right: 10px !important;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 767px) {
   .archive .site-main ul.products.columns-4 li.product {
     width: 100% !important;
     margin-right: 0;
@@ -594,6 +591,114 @@
   clear: both;
   font-size: 24px !important;
   font-family: "Futura", Sans-serif;
+}
+
+/* Get Original Image Button & Info Boxes */
+.pxlt-original-image-container {
+  margin: 25px 0 15px;
+  clear: both;
+}
+.pxlt-original-image-container .pxlt-get-original-image-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 1px solid #000 !important;
+  border-radius: 0px !important;
+  padding: 12px 20px !important;
+  font-family: "Futura", Sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  line-height: 1 !important;
+}
+.pxlt-original-image-container .pxlt-get-original-image-btn svg.whatsapp-btn-icon {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+  fill: none;
+  stroke: currentColor;
+  display: inline-block;
+  vertical-align: middle;
+}
+.pxlt-original-image-container .pxlt-get-original-image-btn:hover {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+.pxlt-original-image-container .original-image-info-boxes {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  max-width: 400px;
+}
+@media (max-width: 767px) {
+  .pxlt-original-image-container .original-image-info-boxes {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.pxlt-original-image-container .original-image-info-boxes .info-box {
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  background: #fbfbfb;
+  padding: 12px 15px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none !important;
+  color: #333 !important;
+  transition: all 0.3s ease;
+}
+.pxlt-original-image-container .original-image-info-boxes .info-box.sku-box {
+  border-left: 3px solid #666;
+}
+.pxlt-original-image-container .original-image-info-boxes .info-box.whatsapp-box {
+  border-left: 3px solid #25d366;
+  cursor: pointer;
+}
+.pxlt-original-image-container .original-image-info-boxes .info-box.whatsapp-box:hover {
+  border-color: #128c7e;
+  background: #f4fff6;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.15);
+}
+.pxlt-original-image-container .original-image-info-boxes .info-box.whatsapp-box:hover .info-value {
+  color: #128c7e !important;
+}
+.pxlt-original-image-container .original-image-info-boxes .info-box .info-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #777;
+  font-family: "Futura", Sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.pxlt-original-image-container .original-image-info-boxes .info-box .info-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+  font-family: "Futura", Sans-serif;
+  word-break: break-all;
+}
+.pxlt-original-image-container .original-image-info-boxes .info-box .info-value.whatsapp-link {
+  color: #25d366;
+}
+
+.size_grid {
+  text-align: left !important;
+  margin: 0 !important;
+  margin-bottom: 20px !important;
+  background: #eeeeee;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 12px 0;
+}
+.size_grid a {
+  padding: 14px 14px;
+  color: #000;
 }
 
 .sagarsaree-banner-slider .elementor-swiper-button {
@@ -1209,11 +1314,11 @@ input[type=search]:focus {
   color: #fff;
 }
 .single-product .product .summary.entry-summary .product_title {
+  font-family: "Futura", Sans-serif;
   font-size: 1.625rem;
   font-weight: 500;
   text-align: left;
   margin-bottom: 1.5rem;
-  text-transform: uppercase;
 }
 .single-product .product .summary.entry-summary p.price {
   font-size: 26px;
@@ -1274,6 +1379,8 @@ input[type=search]:focus {
   width: 55px;
   background: transparent;
   font-size: 20px;
+  border: none;
+  border-radius: 0;
 }
 .single-product .product .summary.entry-summary .cart .quantity .pxlt-quabtity button:hover {
   background-color: #000;
@@ -1285,6 +1392,7 @@ input[type=search]:focus {
   margin: 0 0 0.3125rem 0 !important;
   padding: 14px 0;
   text-align: center;
+  border-radius: 0;
 }
 .single-product .product .summary.entry-summary .cart table.variations.cfvsw-variation-disable-logic tbody tr {
   margin-bottom: 20px !important;
