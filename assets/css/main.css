@@ -852,16 +852,6 @@
   object-fit: cover;
   object-position: top center;
 }
-#primary .best-seller-products .products .type-product .yith-add-to-wishlist-button-block {
-  position: absolute;
-  bottom: 13.5em;
-  right: 10px;
-}
-@media (max-width: 767px) {
-  #primary .best-seller-products .products .type-product .yith-add-to-wishlist-button-block {
-    bottom: 12em;
-  }
-}
 #primary .best-seller-products .products .type-product .yith-wcwl-add-to-wishlist-button {
   position: static !important;
   border-radius: 0;
