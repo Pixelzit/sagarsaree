@@ -209,11 +209,18 @@
   transition: 0.3s;
   position: relative;
   text-indent: -9999px;
+  bottom: 12em;
 }
 #primary .products .type-product .add_to_cart_button:hover,
 #primary .products .type-product .button:hover {
   border-color: rgb(192, 192, 192);
   color: #fff;
+}
+@media (max-width: 767px) {
+  #primary .products .type-product .add_to_cart_button,
+  #primary .products .type-product .button {
+    bottom: 10em;
+  }
 }
 #primary .products .type-product:hover a.button {
   opacity: 1;
@@ -226,7 +233,6 @@
 #primary .products .type-product a.button,
 #primary .products .type-product .yith-wcwl-add-to-wishlist-button {
   position: absolute !important;
-  bottom: 12em;
   right: 8px;
   height: 40px;
   width: 40px;
@@ -333,6 +339,21 @@
   }
 }
 
+.related .products li.product {
+  border: 1px solid rgba(93, 14, 19, 0.1);
+  border-radius: 30px;
+  overflow: hidden;
+  height: auto;
+}
+.related .products li.product.first {
+  margin-left: 0;
+}
+@media (max-width: 767px) {
+  .related .products li.product {
+    border-radius: 15px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   #primary .type-product .woocommerce-LoopProduct-link {
     position: relative;
@@ -365,23 +386,6 @@
     border-width: 0 12px 12px 0;
     border-color: transparent #ecb41c transparent transparent;
   }
-  .related .products li.product {
-    margin-right: 3.347826087% !important;
-    border: 1px solid rgba(93, 14, 19, 0.1);
-    border-radius: 30px;
-    overflow: hidden;
-    height: auto;
-  }
-  .related .products li.product.first {
-    margin-left: 0;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 767px) {
-  .related .products li.product {
-    border-radius: 30px;
-  }
-}
-@media only screen and (min-width: 768px) {
   .storefront-full-width-content.single-product div.product .images {
     width: 48.130435% !important;
   }
@@ -852,8 +856,13 @@
 }
 #primary .best-seller-products .products .type-product .yith-add-to-wishlist-button-block {
   position: absolute;
-  bottom: 12em;
+  bottom: 13.5em;
   right: 10px;
+}
+@media (max-width: 767px) {
+  #primary .best-seller-products .products .type-product .yith-add-to-wishlist-button-block {
+    bottom: 12em;
+  }
 }
 #primary .best-seller-products .products .type-product .yith-wcwl-add-to-wishlist-button {
   position: static !important;

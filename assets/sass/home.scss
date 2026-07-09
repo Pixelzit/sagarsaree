@@ -323,8 +323,12 @@
 
             .yith-add-to-wishlist-button-block {
                 position: absolute;
-                bottom: 12em;
+                bottom: 13.5em;
                 right: 10px;
+
+                @media (max-width: 767px) {
+                    bottom: 12em;
+                }
             }
 
             .yith-wcwl-add-to-wishlist-button {
