@@ -871,14 +871,18 @@
   top: 12px;
   margin: 0;
   padding: 12px 24px;
-  border-radius: 29px;
+  border-radius: 30px;
   background: rgba(236, 180, 28, 0.5);
   color: #fff;
   line-height: 16px;
 }
 @media (max-width: 767px) {
   #primary .best-seller-products .products .type-product span.onsale {
-    font-size: 12px;
+    font-size: 10px;
+    left: 8px;
+    top: 8px;
+    padding: 8px 16px;
+    border-radius: 15px;
   }
 }
 #primary .best-seller-products .products .type-product span.onsale:before {
