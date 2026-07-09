@@ -174,7 +174,7 @@
   font-family: "Montserrat", Sans-serif;
   font-weight: 600;
   font-size: 20px !important;
-  padding: 15px !important;
+  padding: 0 15px 15px !important;
   margin: 0;
 }
 #primary .products .product .price del {
@@ -321,6 +321,18 @@
   color: #fff;
 }
 
+.archive #primary .products .type-product {
+  border: 1px solid rgba(93, 14, 19, 0.1);
+  border-radius: 30px;
+  overflow: hidden;
+  height: auto;
+}
+@media (max-width: 767px) {
+  .archive #primary .products .type-product {
+    border-radius: 15px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   #primary .type-product .woocommerce-LoopProduct-link {
     position: relative;
@@ -355,10 +367,21 @@
   }
   .related .products li.product {
     margin-right: 3.347826087% !important;
+    border: 1px solid rgba(93, 14, 19, 0.1);
+    border-radius: 30px;
+    overflow: hidden;
+    height: auto;
   }
   .related .products li.product.first {
-    margin-left: 12px;
+    margin-left: 0;
   }
+}
+@media only screen and (min-width: 768px) and (max-width: 767px) {
+  .related .products li.product {
+    border-radius: 30px;
+  }
+}
+@media only screen and (min-width: 768px) {
   .storefront-full-width-content.single-product div.product .images {
     width: 48.130435% !important;
   }
@@ -571,57 +594,16 @@
 
 /* Get Original Image Button & Info Boxes */
 .pxlt-original-image-container {
-  margin: 25px 0 15px;
+  margin: 20px 0;
   clear: both;
 }
-.pxlt-original-image-container .pxlt-get-original-image-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: var(--color-hover) !important;
-  color: #fff !important;
-  border: 1px solid var(--color-hover) !important;
-  border-radius: 0px !important;
-  padding: 12px 20px !important;
-  font-family: "Futura", Sans-serif !important;
-  font-size: 16px !important;
-  font-weight: 500 !important;
-  text-transform: uppercase !important;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  line-height: 1 !important;
-}
-@media (max-width: 767px) {
-  .pxlt-original-image-container .pxlt-get-original-image-btn {
-    font-size: 14px !important;
-  }
-}
-.pxlt-original-image-container .pxlt-get-original-image-btn svg.whatsapp-btn-icon {
-  width: 16px;
-  height: 16px;
-  stroke-width: 2;
-  fill: none;
-  stroke: currentColor;
-  display: inline-block;
-  vertical-align: middle;
-}
-.pxlt-original-image-container .pxlt-get-original-image-btn:hover {
-  background-color: #fff !important;
-  color: #000 !important;
+.pxlt-original-image-container .pxlt-get-original-image-btn .pxit-icon {
+  display: flex;
+  width: 24px;
 }
 
 .size_grid {
-  text-align: left !important;
-  margin-inline: 0 !important;
-  margin-bottom: 20px !important;
-  background: #eeeeee;
-  border-radius: 5px;
-  display: inline-block;
-  padding: 12px 0;
-}
-.size_grid a {
-  padding: 14px 14px;
-  color: #000;
+  margin-block: 20px;
 }
 
 .sagarsaree-banner-slider .elementor-swiper-button {
@@ -641,14 +623,18 @@
   align-items: center;
   justify-content: space-evenly;
   background: #fff;
-  border-radius: 16px;
+  border-radius: 30px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   padding-block: 20px;
   row-gap: 30px;
   overflow-x: auto;
-  overflow-x: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+@media (max-width: 767px) {
+  .feature-bar {
+    border-radius: 15px;
+  }
 }
 .feature-bar::-webkit-scrollbar {
   height: 2px;
@@ -762,6 +748,9 @@
   column-gap: 20px;
 }
 @media (max-width: 767px) {
+  .shop-by-occasion-slider {
+    margin-inline: -8px;
+  }
   .shop-by-occasion-slider .slick-track {
     column-gap: 8px;
   }
@@ -851,11 +840,15 @@
   overflow: hidden;
   height: auto;
 }
+@media (max-width: 767px) {
+  #primary .best-seller-products .products .type-product {
+    border-radius: 15px;
+  }
+}
 #primary .best-seller-products .products .type-product img {
   width: 100%;
   object-fit: cover;
   object-position: top center;
-  aspect-ratio: 0.8/1;
 }
 #primary .best-seller-products .products .type-product .yith-add-to-wishlist-button-block {
   position: absolute;
@@ -1260,6 +1253,7 @@ input[type=search]:focus {
   color: #000;
   line-height: 1.4;
   font-weight: 600;
+  margin-block: 20px;
 }
 @media (max-width: 767px) {
   .single-product .product .summary.entry-summary p.price {
@@ -1332,11 +1326,13 @@ input[type=search]:focus {
   margin: 0 0 0.3125rem 0 !important;
   padding: 14px 0;
   text-align: center;
-  border-radius: 0;
+  border-radius: 80px;
 }
 .single-product .product .summary.entry-summary .cart table.variations.cfvsw-variation-disable-logic tbody tr {
-  margin-bottom: 20px !important;
   display: block;
+}
+.single-product .product .summary.entry-summary .cart table.variations.cfvsw-variation-disable-logic tbody tr:not(:last-child) {
+  margin-bottom: 20px !important;
 }
 .single-product .product .summary.entry-summary .variations_form .variations {
   position: relative;
@@ -1347,11 +1343,15 @@ input[type=search]:focus {
 }
 .single-product .product .summary.entry-summary .variations_form .variations tr .value .cfvsw-label-option {
   color: #000;
-  padding: 6px 10px;
+  padding: 8px 12px;
+  font-size: 24px;
 }
 .single-product .product .summary.entry-summary .variations_form .variations tr .value .cfvsw-label-option.cfvsw-selected-swatch {
   background: #000;
   color: #fff !important;
+}
+.single-product .product .summary.entry-summary .variations_form .variations tr .value .reset_variations {
+  margin-top: 12px;
 }
 .single-product .product .summary.entry-summary .yith-add-to-wishlist-button-block {
   display: inline;
@@ -1363,7 +1363,7 @@ input[type=search]:focus {
   justify-content: center;
   padding: 14px 15px;
   margin: 0 0 1.5rem 0 !important;
-  border-radius: 0 !important;
+  border-radius: 80px;
 }
 .single-product .product .summary.entry-summary .product_meta {
   color: #000;
@@ -1551,6 +1551,26 @@ form input {
 .bapf_sfilter.bapf_button_berocket .bapf_button {
   background-color: #000 !important;
   font-family: "Karla";
+}
+
+.pxlt-common-button {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 8px;
+  background-color: var(--color-hover);
+  color: var(--color-white);
+  font-family: "Montserrat", Sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--color-hover);
+  border-radius: 80px;
+  padding: 14px 40px;
+  transition: 0.3s ease-in-out;
+}
+.pxlt-common-button:hover {
+  background-color: var(--color-dark);
 }
 
 /*# sourceMappingURL=main.css.map */
