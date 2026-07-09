@@ -83,9 +83,12 @@
                 font-weight: 600;
                 text-transform: uppercase;
                 transition: 0.3s;
-                position: relative;
+                position: absolute;
+                right: 8px;
+                top: calc(50% + 25px);
+                transform: translateY(-50%);
                 text-indent: -9999px;
-                bottom: 12em;
+
 
                 &:hover {
                     border-color: rgb(192, 192, 192);
@@ -109,9 +112,6 @@
 
             a.button,
             .yith-wcwl-add-to-wishlist-button {
-                position: absolute !important;
-                // bottom: 12em;
-                right: 8px;
                 height: 40px;
                 width: 40px;
                 opacity: 0;
@@ -121,21 +121,20 @@
             }
 
             .yith-wcwl-add-to-wishlist-button {
-                bottom: 12em;
                 border-radius: 0;
                 text-align: center;
                 padding: 10px 8px;
                 border: 1px solid #000 !important;
-
-                @media (max-width: 1024px) {
-                    bottom: 16em;
-                }
             }
 
             .yith-add-to-wishlist-button-block {
                 display: block;
                 width: auto;
                 margin: 0;
+                position: absolute !important;
+                right: 8px;
+                top: 50%;
+                transform: translateY(-50%);
 
                 span.yith-wcwl-add-to-wishlist-button__label {
                     display: none;
