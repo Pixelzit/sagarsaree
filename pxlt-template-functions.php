@@ -231,7 +231,7 @@ function allow_svg_upload($mimes) {
 }
 add_filter('upload_mimes', 'allow_svg_upload');
 
-add_action( 'woocommerce_single_product_summary', 'pxlt_add_get_original_image_button', 15 );
+add_action( 'woocommerce_single_product_summary', 'pxlt_add_get_original_image_button', 32 );
 function pxlt_add_get_original_image_button() {
     global $product;
     if ( ! is_a( $product, 'WC_Product' ) ) {
