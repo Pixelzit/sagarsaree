@@ -550,14 +550,6 @@
 }
 
 @media only screen and (max-width : 767px) {
-    // .archive {
-    //     .site-main ul.products.columns-4 li.product {
-    //         width: 100% !important;
-    //         margin-right: 0;
-    //         float: none;
-    //     }
-    // }
-
     .single-product .product {
         .summary.entry-summary {
             .cart {
@@ -642,7 +634,7 @@
 
 /* Get Original Image Button & Info Boxes */
 .pxlt-original-image-container {
-    margin: 20px 0;
+    margin: 10px 0;
     clear: both;
 
     .pxlt-get-original-image-btn {
@@ -651,45 +643,7 @@
             width: 24px;
         }
     }
-
-    // .pxlt-get-original-image-btn {
-    //     display: inline-flex;
-    //     align-items: center;
-    //     gap: 8px;
-    //     background-color: var(--color-hover) !important;
-    //     color: #fff !important;
-    //     border: 1px solid var(--color-hover) !important;
-    //     border-radius: 0px !important;
-    //     padding: 12px 20px !important;
-    //     font-family: "Futura", Sans-serif !important;
-    //     font-size: 16px !important;
-    //     font-weight: 500 !important;
-    //     text-transform: uppercase !important;
-    //     cursor: pointer;
-    //     transition: all 0.3s ease;
-    //     line-height: 1 !important;
-
-    //     @media (max-width: 767px) {
-    //         font-size: 14px !important;
-    //     }
-
-    //     svg.whatsapp-btn-icon {
-    //         width: 16px;
-    //         height: 16px;
-    //         stroke-width: 2;
-    //         fill: none;
-    //         stroke: currentColor;
-    //         display: inline-block;
-    //         vertical-align: middle;
-    //     }
-
-    //     &:hover {
-    //         background-color: #fff !important;
-    //         color: #000 !important;
-    //     }
-    // }
 }
-
 
 // single page style
 .size_grid {
