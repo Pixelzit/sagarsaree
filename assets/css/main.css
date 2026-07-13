@@ -324,6 +324,11 @@
 #primary .site-main form.woocommerce-ordering select.orderby:focus-visible {
   outline: none;
 }
+@media (max-width: 1440px) {
+  #primary .site-main .woocommerce-pagination {
+    font-size: 18px !important;
+  }
+}
 #primary .site-main .woocommerce-pagination .page-numbers li .page-numbers {
   border-radius: 4px;
   transition: 0.3s;
