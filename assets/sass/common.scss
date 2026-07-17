@@ -1,0 +1,30 @@
+:root {
+  --color-white: #ffffff;
+  --color-dark: #110c0a;
+  --color-hover: #5d0e13;
+  --color-golden: #b67d34;
+  --color-golden-light: #F3DBA7;
+  --text-color: #333333;
+}
+
+
+.pxlt-common-button {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 8px;
+  background-color: var(--color-hover);
+  color: var(--color-white);
+  font-family: "Montserrat", Sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--color-hover);
+  border-radius: 80px;
+  padding: 14px 40px;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--color-dark);
+  }
+}

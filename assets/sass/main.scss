@@ -1,4 +1,4 @@
-@use 'colors';
+@use 'common';
 @use 'footer';
 // @use 'home-services-shortcode';
 @use 'products-pages';
@@ -325,6 +325,14 @@ input[type="search"]:focus {
     }
 
     .summary.entry-summary {
+        .wpb-get-a-quote-button-btn {
+            margin-block: 15px;
+        }
+
+        .in-stock {
+            margin-block: 15px;
+        }
+
         .product_title {
             font-family: playfair;
             font-size: 1.625rem;
@@ -365,6 +373,25 @@ input[type="search"]:focus {
         }
 
         .variations_button {
+            padding-top: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+
+            &:before {
+                display: none !important;
+            }
+
+            .wc-buy-now-btn {
+                grid-column: span 2;
+            }
+        }
+
+        form.cart {
+            margin-top: 40px;
+        }
+
+        form.cart:not(:has(> .single_variation_wrap)) {
             padding-top: 0;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -761,25 +788,4 @@ form {
 .bapf_sfilter.bapf_button_berocket .bapf_button {
     background-color: #000 !important;
     font-family: 'Karla';
-}
-
-.pxlt-common-button {
-    display: inline-flex;
-    align-items: center;
-    column-gap: 8px;
-    background-color: var(--color-hover);
-    color: var(--color-white);
-    font-family: "Montserrat", Sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 2px solid var(--color-hover);
-    border-radius: 80px;
-    padding: 14px 40px;
-    transition: 0.3s ease-in-out;
-
-    &:hover {
-        background-color: var(--color-dark);
-    }
 }
