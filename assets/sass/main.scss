@@ -322,6 +322,19 @@ input[type="search"]:focus {
     span.onsale {
         background: #000;
         color: #fff;
+        position: absolute;
+        margin: 0;
+        top: 12px;
+        left: 120px;
+        padding: 12px 24px;
+        border-radius: 30px;
+        background: rgba(236, 180, 28, 0.5);
+        color: #fff;
+        line-height: 16px;
+
+        @media (max-width: 767px) {
+            left: 12px;
+        }
     }
 
     .summary.entry-summary {
@@ -335,11 +348,15 @@ input[type="search"]:focus {
 
         .product_title {
             font-family: playfair;
-            font-size: 1.625rem;
-            font-weight: 500;
+            font-size: 2.5rem;
+            font-weight: 700;
             text-align: left;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
+
+            @media (max-width: 1024px) {
+                font-size: 2.3rem;
+            }
 
             @media (max-width: 767px) {
                 font-size: 22px;
@@ -474,7 +491,7 @@ input[type="search"]:focus {
             button,
             a.added_to_cart.wc-forward {
                 width: 100%;
-                padding: 14px 0;
+                padding: 8px 0;
                 text-align: center;
                 border-radius: 80px;
 

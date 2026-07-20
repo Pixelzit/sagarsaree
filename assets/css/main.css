@@ -703,7 +703,7 @@ body.sagar-user-not-wholesaler li.product.product-type-woosb .ajax_add_to_cart {
 }
 
 .bundle-pop-wrap {
-  padding: 10px;
+  margin-bottom: 0 !important;
 }
 .bundle-pop-wrap h2 {
   font-family: "Futura", Sans-serif;
@@ -796,6 +796,16 @@ body.sagar-user-not-wholesaler li.product.product-type-woosb .ajax_add_to_cart {
   font-weight: 500 !important;
   text-align: center !important;
   border-width: 1.5px !important;
+}
+
+.wpcf7-form .wpcf7-response-output {
+  margin: 0 !important;
+  border: none !important;
+  font-size: 15px !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+.wpcf7-form.invalid .wpcf7-response-output {
+  color: #ef4444 !important;
 }
 
 .sagarsaree-banner-slider .elementor-swiper-button {
@@ -1431,6 +1441,20 @@ input[type=search]:focus {
 .single-product .product span.onsale {
   background: #000;
   color: #fff;
+  position: absolute;
+  margin: 0;
+  top: 12px;
+  left: 120px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  background: rgba(236, 180, 28, 0.5);
+  color: #fff;
+  line-height: 16px;
+}
+@media (max-width: 767px) {
+  .single-product .product span.onsale {
+    left: 12px;
+  }
 }
 .single-product .product .summary.entry-summary .wpb-get-a-quote-button-btn {
   margin-block: 15px;
@@ -1440,11 +1464,16 @@ input[type=search]:focus {
 }
 .single-product .product .summary.entry-summary .product_title {
   font-family: playfair;
-  font-size: 1.625rem;
-  font-weight: 500;
+  font-size: 2.5rem;
+  font-weight: 700;
   text-align: left;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
+}
+@media (max-width: 1024px) {
+  .single-product .product .summary.entry-summary .product_title {
+    font-size: 2.3rem;
+  }
 }
 @media (max-width: 767px) {
   .single-product .product .summary.entry-summary .product_title {
@@ -1555,7 +1584,7 @@ input[type=search]:focus {
 .single-product .product .summary.entry-summary .cart button,
 .single-product .product .summary.entry-summary .cart a.added_to_cart.wc-forward {
   width: 100%;
-  padding: 14px 0;
+  padding: 8px 0;
   text-align: center;
   border-radius: 80px;
 }
