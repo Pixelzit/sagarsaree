@@ -678,7 +678,7 @@ body.sagar-user-not-wholesaler {
 }
 
 .bundle-pop-wrap {
-    padding: 10px;
+    margin-bottom: 0 !important;
 
     h2 {
         font-family: "Futura", Sans-serif;
@@ -791,4 +791,24 @@ body.sagar-user-not-wholesaler {
         text-align: center !important;
         border-width: 1.5px !important;
     }
+}
+
+
+.wpcf7-form {
+    .wpcf7-response-output {
+        margin: 0 !important;
+        border: none !important;
+        font-size: 15px !important;
+        font-family: "Montserrat", sans-serif !important;
+    }
+
+    &.invalid {
+        .wpcf7-response-output {
+            color: #ef4444 !important;
+        }
+    }
+
+    // &.sent{
+
+    // }
 }

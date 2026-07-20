@@ -393,9 +393,9 @@ jQuery(document).on('input', '.wpcf7-form .gst-number', function () {
 
 });
 
-// Validate GST number on ".bundle-pop-submit" button click
-jQuery(document).on('click', '.bundle-pop-submit', function (event) {
-    var $form = jQuery(this).closest('form');
+// Validate GST number on form submit event
+jQuery(document).on('submit', '.wpcf7-form', function (event) {
+    var $form = jQuery(this);
     var $gstInput = $form.find('.gst-number');
 
     if ($gstInput.length) {
