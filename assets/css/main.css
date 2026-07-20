@@ -483,6 +483,7 @@
   }
   .storefront-full-width-content.single-product div.product .images {
     width: 48.130435% !important;
+    margin-right: 0 !important;
   }
   .storefront-full-width-content.single-product div.product .summary {
     width: 47.521739% !important;
@@ -703,6 +704,13 @@ body.sagar-user-not-wholesaler li.product.product-type-woosb .ajax_add_to_cart {
 
 .bundle-pop-wrap {
   padding: 10px;
+}
+.bundle-pop-wrap h2 {
+  font-family: "Futura", Sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 40px;
 }
 .bundle-pop-wrap .input-bx:not(:last-child) {
   margin-bottom: 20px;
@@ -1491,6 +1499,7 @@ input[type=search]:focus {
 .single-product .product .summary.entry-summary form.cart:not(:has(> .single_variation_wrap)):before {
   display: none !important;
 }
+.single-product .product .summary.entry-summary form.cart:not(:has(> .single_variation_wrap)) .ppom-wrapper,
 .single-product .product .summary.entry-summary form.cart:not(:has(> .single_variation_wrap)) .wc-buy-now-btn {
   grid-column: span 2;
 }
