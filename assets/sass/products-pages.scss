@@ -377,6 +377,7 @@
 
     .storefront-full-width-content.single-product div.product .images {
         width: 48.130435% !important;
+        margin-right: 0 !important;
     }
 
     .storefront-full-width-content.single-product div.product .summary {
@@ -678,6 +679,14 @@ body.sagar-user-not-wholesaler {
 
 .bundle-pop-wrap {
     padding: 10px;
+
+    h2 {
+        font-family: "Futura", Sans-serif;
+        font-size: 28px;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 40px;
+    }
 
     .input-bx {
         &:not(:last-child) {

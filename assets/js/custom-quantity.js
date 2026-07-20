@@ -304,3 +304,127 @@ jQuery(document).ready(function ($) {
         }
     });
 });
+
+
+jQuery(document).on('input', '.wpcf7-form .full-name', function ($) {
+
+    let value = jQuery(this).val();
+
+    value = value
+        .replace(/[^A-Za-z ]+/g, '')  // Remove invalid characters
+        .replace(/ +/g, ' ')          // Single space only
+        .replace(/^ /, '');           // No leading space
+
+    jQuery(this).val(value);
+
+});
+
+jQuery(document).on('input', '.wpcf7-form .phone-number', function ($) {
+
+    let value = jQuery(this).val();
+
+    // Sirf digits rakho
+    value = value.replace(/\D/g, '');
+
+    // Maximum 10 digits
+    value = value.substring(0, 10);
+
+    // Auto format: (XXX) XXX-XXXX
+    if (value.length > 6) {
+        value = `(${value.substring(0, 3)}) ${value.substring(3, 6)}-${value.substring(6)}`;
+    } else if (value.length > 3) {
+        value = `(${value.substring(0, 3)}) ${value.substring(3)}`;
+    } else if (value.length > 0) {
+        value = `(${value}`;
+    }
+
+    jQuery(this).val(value);
+
+});
+
+
+jQuery(document).on('input', '.wpcf7-form .gst-number', function () {
+
+    let value = jQuery(this).val().toUpperCase();
+
+    // Sirf A-Z aur 0-9 allow
+    value = value.replace(/[^A-Z0-9]/g, '');
+
+    // Max 15 characters
+    value = value.substring(0, 15);
+
+    let formatted = '';
+
+    for (let i = 0; i < value.length; i++) {
+
+        let ch = value[i];
+
+        if (i < 2) {
+            // 2 digits
+            if (/\d/.test(ch)) formatted += ch;
+
+        } else if (i < 7) {
+            // 5 letters
+            if (/[A-Z]/.test(ch)) formatted += ch;
+
+        } else if (i < 11) {
+            // 4 digits
+            if (/\d/.test(ch)) formatted += ch;
+
+        } else if (i === 11) {
+            // 1 letter
+            if (/[A-Z]/.test(ch)) formatted += ch;
+
+        } else if (i === 12) {
+            // 1 alphanumeric
+            if (/[A-Z0-9]/.test(ch)) formatted += ch;
+
+        } else if (i === 13) {
+            // Always Z
+            formatted += 'Z';
+
+        } else if (i === 14) {
+            // 1 alphanumeric
+            if (/[A-Z0-9]/.test(ch)) formatted += ch;
+        }
+    }
+
+    jQuery(this).val(formatted);
+
+});
+
+// Validate GST number on ".bundle-pop-submit" button click
+jQuery(document).on('click', '.bundle-pop-submit', function (event) {
+    var $form = jQuery(this).closest('form');
+    var $gstInput = $form.find('.gst-number');
+
+    if ($gstInput.length) {
+        var gstVal = $gstInput.val().trim();
+        // Regex pattern: ^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$
+        var regex = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
+
+        // Remove existing validation tip and error class
+        $gstInput.removeClass('wpcf7-not-valid');
+        $gstInput.siblings('.wpcf7-not-valid-tip').remove();
+
+        if (gstVal === '' || !regex.test(gstVal)) {
+            // Prevent submission
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Apply error styles and append warning
+            $gstInput.addClass('wpcf7-not-valid');
+            $gstInput.after('<span class="wpcf7-not-valid-tip" aria-hidden="true">Please enter a valid GST Number</span>');
+
+            // Focus on invalid field
+            $gstInput.focus();
+            return false;
+        }
+    }
+});
+
+// Clear error tips and styling when user focuses or types in the GST input
+jQuery(document).on('input focus', '.wpcf7-form .gst-number', function () {
+    jQuery(this).removeClass('wpcf7-not-valid');
+    jQuery(this).siblings('.wpcf7-not-valid-tip').remove();
+});
