@@ -373,6 +373,9 @@
   width: 100%;
   margin: 0;
 }
+.archive #primary ul.products .wpb-get-a-quote-button-btn {
+  margin: 0 auto 15px;
+}
 @media (max-width: 1440px) {
   .archive #primary ul.products {
     grid-template-columns: repeat(3, 1fr);

@@ -307,3 +307,29 @@ function sagar_cf7_gst_validation( $result, $tag ) {
     }
     return $result;
 }
+
+/**
+ * Disable Cash on Delivery (COD) for bundle products (type 'woosb') in the cart.
+ */
+function sagar_disable_cod_for_bundle_products( $available_gateways ) {
+    if ( is_admin() ) {
+        return $available_gateways;
+    }
+    
+    if ( ! isset( $available_gateways['cod'] ) ) {
+        return $available_gateways;
+    }
+
+    if ( WC()->cart && is_callable( array( WC()->cart, 'get_cart' ) ) ) {
+        foreach ( WC()->cart->get_cart() as $cart_item ) {
+            $product = $cart_item['data'];
+            if ( $product && $product->get_type() === 'woosb' ) {
+                unset( $available_gateways['cod'] );
+                break;
+            }
+        }
+    }
+
+    return $available_gateways;
+}
+add_filter( 'woocommerce_available_payment_gateways', 'sagar_disable_cod_for_bundle_products', 20 );
