@@ -137,10 +137,11 @@
                 padding-top: 0;
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                grid-gap: 40px;
+                grid-gap: 20px;
 
-                &:before {
-                    display: none !important;
+                &:before,
+                &:after {
+                    content: none !important;
                 }
 
 
@@ -269,8 +270,24 @@
                 }
             }
 
+            .pxlt-button-wrap {
+                max-width: 80%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 20px;
+                margin-block: 20px 40px;
+
+                .yith-wcwl-add-to-wishlist-button,
+                .pxlt-common-button {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+
             .yith-add-to-wishlist-button-block {
+                width: 100%;
                 display: flex;
+                margin: 0;
 
                 .yith-wcwl-icon-svg__wrapper,
                 .yith-wcwl-icon-svg__wrapper svg {
