@@ -202,7 +202,7 @@ function pxlt_add_wishlist_btn_for_mobile_view(){
       <?php
     
 }
-add_action('woocommerce_after_add_to_cart_button', 'pxlt_add_wishlist_btn_for_mobile_view',30);
+// add_action('woocommerce_after_add_to_cart_button', 'pxlt_add_wishlist_btn_for_mobile_view',30);
 
 function pxlt_view_size_chart() {
     $categoriesSlug = [

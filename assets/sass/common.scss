@@ -7,6 +7,35 @@
   --text-color: #333333;
 }
 
+.site-content {
+  @media (max-width: 1440px) {
+    padding-inline: 40px;
+  }
+
+  @media (max-width: 767px) {
+    padding-inline: 12px;
+  }
+}
+
+a:focus,
+button:focus,
+.button.alt:focus,
+input:focus,
+textarea:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus {
+  outline-color: transparent !important;
+}
+
+.site {
+  overflow-y: hidden;
+}
 
 .pxlt-common-button {
   display: inline-flex;
