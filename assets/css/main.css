@@ -430,16 +430,22 @@ input[type=search]:focus {
     margin-bottom: 30px;
   }
 }
-.archive #primary .products .type-product {
+.archive #primary .products .type-product,
+.archive #primary .products .product-category {
   border: 1px solid rgba(93, 14, 19, 0.1);
   border-radius: 30px;
   overflow: hidden;
   height: auto;
 }
 @media (max-width: 767px) {
-  .archive #primary .products .type-product {
+  .archive #primary .products .type-product,
+  .archive #primary .products .product-category {
     border-radius: 15px;
   }
+}
+.archive #primary .products .type-product img,
+.archive #primary .products .product-category img {
+  margin-bottom: 0;
 }
 
 .related ul.products {
