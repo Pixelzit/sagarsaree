@@ -281,7 +281,9 @@
         }
 
         .products {
-            .type-product {
+
+            .type-product,
+            .product-category {
                 border: 1px solid rgba(93, 14, 19, 0.1);
                 border-radius: 30px;
                 overflow: hidden;
@@ -289,6 +291,10 @@
 
                 @media (max-width: 767px) {
                     border-radius: 15px;
+                }
+
+                img {
+                    margin-bottom: 0;
                 }
             }
         }
