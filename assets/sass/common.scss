@@ -7,13 +7,27 @@
   --text-color: #333333;
 }
 
-.site-content {
-  @media (max-width: 1440px) {
-    padding-inline: 40px;
+body {
+
+  .storefront-breadcrumb {
+    .col-full {
+      padding: 0;
+    }
   }
 
-  @media (max-width: 767px) {
-    padding-inline: 12px;
+  .storefront-breadcrumb,
+  .site-content {
+    max-width: 1720px;
+    padding-inline: 60px;
+    margin-inline: auto;
+
+    @media (max-width: 1440px) {
+      padding-inline: 40px;
+    }
+
+    @media (max-width: 767px) {
+      padding-inline: 12px;
+    }
   }
 }
 

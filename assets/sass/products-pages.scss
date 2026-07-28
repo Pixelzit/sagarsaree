@@ -347,6 +347,53 @@
     }
 }
 
+
+body {
+    .nfancybox-container {
+        z-index: 99999999999;
+    }
+}
+
+.nfancybox-container {
+    .nfancybox-toolbar {
+        .nfancybox-button {
+            border: none;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-white);
+            margin: 4px;
+
+            svg {
+                color: var(--color-hover);
+                fill: var(--color-hover);
+                width: 24px;
+                margin: auto;
+            }
+        }
+    }
+
+    .nfancybox-navigation {
+        .nfancybox-button {
+            border: none;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-white);
+
+            svg {
+                color: var(--color-hover);
+                fill: var(--color-hover);
+            }
+        }
+
+        .nfancybox-button--arrow_left {}
+
+        .nfancybox-button--arrow_right {}
+    }
+}
+
+
 @media only screen and (min-width : 768px) {
     #primary .type-product {
         .woocommerce-LoopProduct-link {
@@ -438,106 +485,15 @@
         padding-right: 180px;
     }
 
-    // .single-product .product {
-    //     .summary.entry-summary {
-    //         .cart {
-    //             button[type="submit"] {
-    //                 position: relative;
-    //                 text-indent: -9999px;
-    //                 float: left !important;
-    //                 flex-wrap: wrap;
-    //                 margin: 0 4px 6px !important;
-    //                 width: 32.66%;
-    //                 height: 50px;
-
-    //                 &:before {
-    //                     content: "";
-    //                     height: 45px;
-    //                     width: 45px;
-    //                     position: absolute;
-    //                     top: 0;
-    //                     right: 0;
-    //                     left: 0;
-    //                     margin: 5px auto;
-    //                     background-repeat: no-repeat;
-    //                     background-position: center center;
-    //                     background-size: cover;
-    //                 }
-    //             }
-
-    //             button[name="add-to-cart"] {
-    //                 margin-left: 0 !important;
-
-    //                 &:before {
-    //                     background-image: url(../image/shopping-basket.svg);
-    //                 }
-    //             }
-
-    //             button.single_add_to_cart_button {
-    //                 margin-left: 0 !important;
-
-    //                 &:before {
-    //                     background-image: url(../image/shopping-basket.svg);
-    //                 }
-    //             }
-
-    //             button[name="wc-quick-buy-now"]:before {
-    //                 background-image: url(../image/speed-cart.svg);
-    //                 height: 30px;
-    //                 width: 36px;
-    //                 margin: 12px auto;
-    //             }
-    //         }
-
-    //         .yith-add-to-wishlist-button-block,
-    //         a.added_to_cart.wc-forward {
-    //             display: none;
-    //         }
-
-    //         .custom-wishlist .yith-add-to-wishlist-button-block {
-    //             display: inline-block !important;
-    //             width: 32.66%;
-    //             margin: 0 0 6px 0 !important;
-
-    //             button {
-    //                 margin: 0 !important;
-    //                 padding: 8px 15px !important;
-    //                 background: #333333;
-    //                 border-color: #333333;
-    //                 height: 50px;
-
-    //                 &:hover {
-    //                     background: #1a1a1a;
-    //                     border-color: #1a1a1a;
-    //                 }
-
-    //                 svg.yith-wcwl-add-to-wishlist-button-icon {
-    //                     color: #ffffff !important;
-    //                 }
-    //             }
-
-    //             .yith-wcwl-add-to-wishlist-button__label {
-    //                 display: none;
-    //             }
-
-    //             .yith-wcwl-add-to-wishlist-button:is(button) svg,
-    //             .yith-wcwl-add-to-wishlist-button:is(button) img {
-    //                 width: 36px !important;
-    //                 height: 36px !important;
-    //             }
-    //         }
-    //     }
-    // }
-
     #pxlt_tab_content {
         display: none;
     }
 
     span.nickx-popup {
-        left: 0;
-        right: 0 !important;
-        top: 0;
-        bottom: 0 !important;
+        left: 12px;
+        right: auto !important;
+        top: 12px;
+        bottom: auto !important;
 
         &:before {
             position: absolute;
@@ -545,22 +501,10 @@
             right: 10px !important;
         }
     }
+
 }
 
 @media only screen and (max-width : 767px) {
-    // .single-product .product {
-    //     .summary.entry-summary {
-    //         .cart {
-    //             button[type="submit"] {
-    //                 width: 31.66%;
-    //             }
-    //         }
-
-    //         .custom-wishlist .yith-add-to-wishlist-button-block {
-    //             width: 31.66%;
-    //         }
-    //     }
-    // }
 
     .pagination .page-numbers li .page-numbers,
     .woocommerce-pagination .page-numbers li .page-numbers {
@@ -585,21 +529,6 @@
         padding: 10px 0;
     }
 
-    // .single-product .product {
-    //     .summary.entry-summary {
-    //         .woocommerce-product-details__short-description p {
-    //             font-size: 14px;
-    //         }
-
-    //         .product_title {
-    //             font-size: 1.3rem;
-    //         }
-    //     }
-
-    //     .woocommerce-tabs {
-    //         padding: 20px 20px 0px;
-    //     }
-    // }
 
     .related h2 {
         font-size: 22px !important;
@@ -664,6 +593,26 @@ body.sagar-user-not-wholesaler {
         .add_to_cart_button,
         .ajax_add_to_cart {
             display: none !important;
+        }
+    }
+}
+
+.product-type-woosb {
+    .pxlt-item-wrap {
+
+        .e-con-inner {
+            @media (min-width: 1441px) {
+                width: 50%;
+            }
+        }
+
+        .cod,
+        .f-shipping {
+            display: none;
+        }
+
+        .elementor-element {
+            grid-column: span 2;
         }
     }
 }

@@ -7,13 +7,24 @@
   --text-color: #333333;
 }
 
+body .storefront-breadcrumb .col-full {
+  padding: 0;
+}
+body .storefront-breadcrumb,
+body .site-content {
+  max-width: 1720px;
+  padding-inline: 60px;
+  margin-inline: auto;
+}
 @media (max-width: 1440px) {
-  .site-content {
+  body .storefront-breadcrumb,
+  body .site-content {
     padding-inline: 40px;
   }
 }
 @media (max-width: 767px) {
-  .site-content {
+  body .storefront-breadcrumb,
+  body .site-content {
     padding-inline: 12px;
   }
 }
@@ -489,6 +500,35 @@ input[type=search]:focus {
   }
 }
 
+body .nfancybox-container {
+  z-index: 99999999999;
+}
+
+.nfancybox-container .nfancybox-toolbar .nfancybox-button {
+  border: none;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-white);
+  margin: 4px;
+}
+.nfancybox-container .nfancybox-toolbar .nfancybox-button svg {
+  color: var(--color-hover);
+  fill: var(--color-hover);
+  width: 24px;
+  margin: auto;
+}
+.nfancybox-container .nfancybox-navigation .nfancybox-button {
+  border: none;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-white);
+}
+.nfancybox-container .nfancybox-navigation .nfancybox-button svg {
+  color: var(--color-hover);
+  fill: var(--color-hover);
+}
 @media only screen and (min-width: 768px) {
   #primary .type-product .woocommerce-LoopProduct-link {
     position: relative;
@@ -562,10 +602,10 @@ input[type=search]:focus {
     display: none;
   }
   span.nickx-popup {
-    left: 0;
-    right: 0 !important;
-    top: 0;
-    bottom: 0 !important;
+    left: 12px;
+    right: auto !important;
+    top: 12px;
+    bottom: auto !important;
   }
   span.nickx-popup:before {
     position: absolute;
@@ -640,6 +680,19 @@ body.sagar-user-not-wholesaler li.product.product-type-woosb .price,
 body.sagar-user-not-wholesaler li.product.product-type-woosb .add_to_cart_button,
 body.sagar-user-not-wholesaler li.product.product-type-woosb .ajax_add_to_cart {
   display: none !important;
+}
+
+@media (min-width: 1441px) {
+  .product-type-woosb .pxlt-item-wrap .e-con-inner {
+    width: 50%;
+  }
+}
+.product-type-woosb .pxlt-item-wrap .cod,
+.product-type-woosb .pxlt-item-wrap .f-shipping {
+  display: none;
+}
+.product-type-woosb .pxlt-item-wrap .elementor-element {
+  grid-column: span 2;
 }
 
 .wpb-gqf-popup .swal2-close {

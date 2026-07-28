@@ -79,11 +79,6 @@
 }
 
 @media(min-width: 768px) {
-    .col-full {
-        max-width: 1240px !important;
-        padding: 0 10px !important;
-    }
-
     .storefront-primary-navigation {
         display: contents;
     }
@@ -100,7 +95,6 @@
         .col-full {
             width: 100% !important;
             max-width: 100% !important;
-            padding: 0 20px !important;
         }
     }
 
