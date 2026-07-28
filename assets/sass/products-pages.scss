@@ -597,6 +597,26 @@ body.sagar-user-not-wholesaler {
     }
 }
 
+.product-type-woosb {
+    .pxlt-item-wrap {
+
+        .e-con-inner {
+            @media (min-width: 1441px) {
+                width: 50%;
+            }
+        }
+
+        .cod,
+        .f-shipping {
+            display: none;
+        }
+
+        .elementor-element {
+            grid-column: span 2;
+        }
+    }
+}
+
 .wpb-gqf-popup {
     .swal2-close {
         position: absolute;
