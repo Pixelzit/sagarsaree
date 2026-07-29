@@ -128,14 +128,17 @@
             p.price,
             .price {
                 font-family: "Futura", Sans-serif;
-                font-size: 24px;
-                color: #000;
+                font-size: 20px;
+                color: var(--color-golden);
                 line-height: 1.4;
                 font-weight: 600;
                 margin-block: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                column-gap: 10px;
 
                 @media (max-width: 767px) {
-                    font-size: 18px;
+                    font-size: 16px;
                 }
 
                 .wpc-price-excl-gst {

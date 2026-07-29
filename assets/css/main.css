@@ -1259,16 +1259,19 @@ body.sagar-user-not-wholesaler li.product.product-type-woosb .ajax_add_to_cart {
 .single-product .product .summary.entry-summary p.price,
 .single-product .product .summary.entry-summary .price {
   font-family: "Futura", Sans-serif;
-  font-size: 24px;
-  color: #000;
+  font-size: 20px;
+  color: var(--color-golden);
   line-height: 1.4;
   font-weight: 600;
   margin-block: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
 }
 @media (max-width: 767px) {
   .single-product .product .summary.entry-summary p.price,
   .single-product .product .summary.entry-summary .price {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 .single-product .product .summary.entry-summary p.price .wpc-price-excl-gst,
