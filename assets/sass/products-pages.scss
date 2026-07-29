@@ -41,6 +41,24 @@
                 }
             }
 
+            span.onsale {
+                background: #000;
+                color: #fff;
+                position: absolute;
+                margin: 0;
+                top: 12px;
+                left: 12px;
+                padding: 12px 24px;
+                border-radius: 30px;
+                background: rgba(236, 180, 28, 0.5);
+                color: #fff;
+                line-height: 16px;
+            }
+
+            .wpb-get-a-quote-button-btn {
+                margin: 0 auto 15px !important;
+            }
+
             .price {
                 display: block;
                 color: var(--color-golden);
@@ -257,10 +275,6 @@
                 margin: 0;
             }
 
-            .wpb-get-a-quote-button-btn {
-                margin: 0 auto 15px;
-            }
-
             @media (max-width: 1440px) {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -387,75 +401,71 @@ body {
                 fill: var(--color-hover);
             }
         }
-
-        .nfancybox-button--arrow_left {}
-
-        .nfancybox-button--arrow_right {}
     }
 }
 
 
-@media only screen and (min-width : 768px) {
-    #primary .type-product {
-        .woocommerce-LoopProduct-link {
-            position: relative;
+// @media only screen and (min-width : 768px) {
+//     #primary .type-product {
+//         .woocommerce-LoopProduct-link {
+//             position: relative;
 
-            span.onsale {
-                position: absolute;
-                top: 15px;
-                left: -11px;
-                text-transform: capitalize;
-                color: #ffffff;
-                background: #ecb41c;
-                letter-spacing: 0;
-                font-size: 14px;
-                line-height: 15px;
-                font-weight: 600;
-                padding: 10px 15px;
-                border-radius: 0;
-                display: block;
-                text-decoration: none;
-                border: 0;
+//             span.onsale {
+//                 position: absolute;
+//                 top: 15px;
+//                 left: -11px;
+//                 text-transform: capitalize;
+//                 color: #ffffff;
+//                 background: #ecb41c;
+//                 letter-spacing: 0;
+//                 font-size: 14px;
+//                 line-height: 15px;
+//                 font-weight: 600;
+//                 padding: 10px 15px;
+//                 border-radius: 0;
+//                 display: block;
+//                 text-decoration: none;
+//                 border: 0;
 
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 35px;
-                    left: 0px;
-                    width: 0;
-                    height: 0;
-                    border-style: solid;
-                    border-width: 0 12px 12px 0;
-                    border-color: transparent #ecb41c transparent transparent;
-                }
-            }
-        }
-    }
+//                 &::before {
+//                     content: "";
+//                     position: absolute;
+//                     top: 35px;
+//                     left: 0px;
+//                     width: 0;
+//                     height: 0;
+//                     border-style: solid;
+//                     border-width: 0 12px 12px 0;
+//                     border-color: transparent #ecb41c transparent transparent;
+//                 }
+//             }
+//         }
+//     }
 
-    .woocommerce-shipping-fields {
-        #ship-to-different-address {
-            .woocommerce-form__input-checkbox {
-                left: 0 !important;
-                right: inherit;
-            }
+//     .woocommerce-shipping-fields {
+//         #ship-to-different-address {
+//             .woocommerce-form__input-checkbox {
+//                 left: 0 !important;
+//                 right: inherit;
+//             }
 
-            span {
-                margin-left: 20px;
-            }
-        }
-    }
+//             span {
+//                 margin-left: 20px;
+//             }
+//         }
+//     }
 
-    .page-template-template-fullwidth-php .col2-set {
-        .form-row-first {
-            width: 48.454545% !important;
-            margin-right: 0 !important;
-        }
+//     .page-template-template-fullwidth-php .col2-set {
+//         .form-row-first {
+//             width: 48.454545% !important;
+//             margin-right: 0 !important;
+//         }
 
-        .form-row-last {
-            width: 48.454545% !important;
-        }
-    }
-}
+//         .form-row-last {
+//             width: 48.454545% !important;
+//         }
+//     }
+// }
 
 .woocommerce-shipping-fields #ship-to-different-address {
     margin-bottom: 20px;
@@ -466,44 +476,44 @@ body {
     }
 }
 
-@media only screen and (max-width : 767px) {
-    #primary .type-product {
-        .woocommerce-LoopProduct-link {
-            position: relative;
+// @media only screen and (max-width : 767px) {
+//     #primary .type-product {
+//         .woocommerce-LoopProduct-link {
+//             position: relative;
 
-            span.onsale {
-                position: absolute;
-                top: 0;
-                right: auto;
-                background: #000;
-                color: #fff;
-            }
-        }
-    }
+//             span.onsale {
+//                 position: absolute;
+//                 top: 0;
+//                 right: auto;
+//                 background: #000;
+//                 color: #fff;
+//             }
+//         }
+//     }
 
-    #primary header h1 {
-        font-size: 30px;
-        padding-right: 180px;
-    }
+//     #primary header h1 {
+//         font-size: 30px;
+//         padding-right: 180px;
+//     }
 
-    #pxlt_tab_content {
-        display: none;
-    }
+//     #pxlt_tab_content {
+//         display: none;
+//     }
 
-    span.nickx-popup {
-        left: 12px;
-        right: auto !important;
-        top: 12px;
-        bottom: auto !important;
+//     span.nickx-popup {
+//         left: 12px;
+//         right: auto !important;
+//         top: 12px;
+//         bottom: auto !important;
 
-        &:before {
-            position: absolute;
-            bottom: 12px !important;
-            right: 10px !important;
-        }
-    }
+//         &:before {
+//             position: absolute;
+//             bottom: 12px !important;
+//             right: 10px !important;
+//         }
+//     }
 
-}
+// }
 
 @media only screen and (max-width : 767px) {
 
@@ -600,6 +610,7 @@ body.sagar-user-not-wholesaler {
 
 .product-type-woosb {
     .pxlt-item-wrap {
+        display: none !important;
 
         .e-con-inner {
             @media (min-width: 1441px) {
