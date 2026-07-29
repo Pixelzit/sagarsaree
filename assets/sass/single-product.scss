@@ -75,12 +75,16 @@
             position: absolute;
             margin: 0;
             top: 12px;
-            left: 120px;
+            left: 12px;
             padding: 12px 24px;
             border-radius: 30px;
             background: rgba(236, 180, 28, 0.5);
             color: #fff;
             line-height: 16px;
+        }
+
+        .onsale:has(+ .images) {
+            left: 120px;
 
             @media (max-width: 767px) {
                 left: 12px;
@@ -89,7 +93,13 @@
 
         .summary.entry-summary {
             .wpb-get-a-quote-button-btn {
-                margin-block: 15px;
+                font-size: 16px;
+                font-weight: 500;
+                margin: 20px 0 !important;
+                border: none !important;
+                border-radius: 80px;
+                padding: 14px 40px;
+                transition: 0.3s ease-in-out;
             }
 
             .in-stock {
@@ -475,6 +485,14 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    #reviews {
+        .comment-form {
+            >p:not(:last-child) {
+                margin-bottom: 20px;
             }
         }
     }
