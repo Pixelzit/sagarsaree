@@ -344,15 +344,17 @@
             }
 
             span.onsale {
+                font-size: 12px;
+                font-weight: normal;
+                line-height: 16px;
                 position: absolute;
                 left: 12px;
                 top: 12px;
                 margin: 0;
-                padding: 12px 24px;
+                padding: 4px 16px;
                 border-radius: 30px;
                 background: rgba(236, 180, 28, 0.5);
                 color: #fff;
-                line-height: 16px;
 
                 @media (max-width: 767px) {
                     font-size: 10px;

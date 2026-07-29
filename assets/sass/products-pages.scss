@@ -42,17 +42,19 @@
             }
 
             span.onsale {
+                font-size: 12px;
+                font-weight: normal;
+                line-height: 16px;
                 background: #000;
                 color: #fff;
                 position: absolute;
                 margin: 0;
                 top: 12px;
                 left: 12px;
-                padding: 12px 24px;
+                padding: 4px 16px;
                 border-radius: 30px;
                 background: rgba(236, 180, 28, 0.5);
                 color: #fff;
-                line-height: 16px;
             }
 
             .wpb-get-a-quote-button-btn {
