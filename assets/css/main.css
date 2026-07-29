@@ -13,8 +13,13 @@ body .storefront-breadcrumb .col-full {
 body .storefront-breadcrumb,
 body .site-content {
   max-width: 1720px;
-  padding-inline: 60px;
   margin-inline: auto;
+}
+@media (max-width: 1800px) {
+  body .storefront-breadcrumb,
+  body .site-content {
+    padding-inline: 60px;
+  }
 }
 @media (max-width: 1440px) {
   body .storefront-breadcrumb,
@@ -372,12 +377,12 @@ input[type=search]:focus {
   }
 }
 #primary .site-main form.woocommerce-ordering select.orderby {
-  font-family: Playfair Display;
-  font-size: 16px;
+  font-size: 18px;
   background: #fff;
   border-color: transparent;
   padding: 10px 5px;
   border-radius: 6px;
+  border: 1px solid rgba(17, 12, 10, 0.2);
 }
 #primary .site-main form.woocommerce-ordering select.orderby:focus {
   box-shadow: 0 0 5px #ddd;
@@ -1288,17 +1293,39 @@ body.sagar-user-not-wholesaler li.product.product-type-woosb .ajax_add_to_cart {
     line-height: 1.5;
   }
 }
-.single-product .product .summary.entry-summary p.price {
-  font-size: 26px;
+.single-product .product .summary.entry-summary p.price,
+.single-product .product .summary.entry-summary .price {
+  font-family: "Futura", Sans-serif;
+  font-size: 24px;
   color: #000;
   line-height: 1.4;
   font-weight: 600;
   margin-block: 20px;
 }
 @media (max-width: 767px) {
-  .single-product .product .summary.entry-summary p.price {
+  .single-product .product .summary.entry-summary p.price,
+  .single-product .product .summary.entry-summary .price {
     font-size: 18px;
   }
+}
+.single-product .product .summary.entry-summary p.price .wpc-price-excl-gst,
+.single-product .product .summary.entry-summary .price .wpc-price-excl-gst {
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+  margin-left: 6px;
+  display: inline-block;
+}
+@media (max-width: 767px) {
+  .single-product .product .summary.entry-summary p.price .wpc-price-excl-gst,
+  .single-product .product .summary.entry-summary .price .wpc-price-excl-gst {
+    font-size: 14px;
+  }
+}
+.single-product .product .summary.entry-summary .woosb-products .wpc-price-excl-gst,
+.single-product .product .summary.entry-summary .woosb-price .wpc-price-excl-gst,
+.single-product .product .summary.entry-summary .wooco-products .wpc-price-excl-gst {
+  display: none !important;
 }
 .single-product .product .summary.entry-summary .woocommerce-product-details__short-description p {
   font-size: 16px;
@@ -1316,9 +1343,13 @@ body.sagar-user-not-wholesaler li.product.product-type-woosb .ajax_add_to_cart {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
+  align-items: start;
 }
 .single-product .product .summary.entry-summary .variations_button:before, .single-product .product .summary.entry-summary .variations_button:after {
   content: none !important;
+}
+.single-product .product .summary.entry-summary .variations_button .ppom-wrapper {
+  grid-column: span 2;
 }
 .single-product .product .summary.entry-summary .variations_button .wc-buy-now-btn {
   grid-column: span 2;

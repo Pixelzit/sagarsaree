@@ -113,8 +113,10 @@
                 }
             }
 
-            p.price {
-                font-size: 26px;
+            p.price,
+            .price {
+                font-family: "Futura", Sans-serif;
+                font-size: 24px;
                 color: #000;
                 line-height: 1.4;
                 font-weight: 600;
@@ -122,6 +124,26 @@
 
                 @media (max-width: 767px) {
                     font-size: 18px;
+                }
+
+                .wpc-price-excl-gst {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #555;
+                    margin-left: 6px;
+                    display: inline-block;
+
+                    @media (max-width: 767px) {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .woosb-products,
+            .woosb-price,
+            .wooco-products {
+                .wpc-price-excl-gst {
+                    display: none !important;
                 }
             }
 
@@ -143,10 +165,15 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 grid-gap: 30px;
+                align-items: start;
 
                 &:before,
                 &:after {
                     content: none !important;
+                }
+
+                .ppom-wrapper {
+                    grid-column: span 2;
                 }
 
                 .wc-buy-now-btn {
