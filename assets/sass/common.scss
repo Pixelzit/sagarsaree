@@ -18,8 +18,11 @@ body {
   .storefront-breadcrumb,
   .site-content {
     max-width: 1720px;
-    padding-inline: 60px;
     margin-inline: auto;
+
+    @media (max-width: 1800px) {
+      padding-inline: 60px;
+    }
 
     @media (max-width: 1440px) {
       padding-inline: 40px;

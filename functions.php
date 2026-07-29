@@ -255,6 +255,32 @@ function sagar_hide_bundle_price_for_non_wholesalers( $price, $product ) {
 }
 
 /**
+ * Append "Excl. GST" after price on single product page ONLY for main bundle product total price.
+ */
+add_filter( 'woocommerce_get_price_html', 'sagar_wpc_product_price_excl_gst', 101, 2 );
+function sagar_wpc_product_price_excl_gst( $price, $product ) {
+    if ( is_admin() || empty( $price ) ) {
+        return $price;
+    }
+
+    if ( is_product() && $product ) {
+        $wpc_types = array( 'woosb', 'wooco', 'wootv', 'woofbt', 'woosg', 'wpcgp', 'wpc_product' );
+        $type      = $product->get_type();
+        $main_id   = get_the_ID();
+
+        // Only append to the main page product (the bundle product itself), not its child items in the list
+        if ( in_array( $type, $wpc_types, true ) && (int) $product->get_id() === (int) $main_id ) {
+            if ( strpos( $price, 'wpc-price-excl-gst' ) === false && strpos( $price, 'Excl. GST' ) === false ) {
+                $price .= ' <span class="wpc-price-excl-gst">( Excl. GST )</span>';
+            }
+        }
+    }
+
+    return $price;
+}
+
+
+/**
  * Prevent adding bundle products to cart for guests and non-wholesalers.
  */
 add_filter( 'woocommerce_add_to_cart_validation', 'sagar_prevent_bundle_cart_addition', 9999, 3 );
