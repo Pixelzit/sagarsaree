@@ -359,3 +359,127 @@ function sagar_disable_cod_for_bundle_products( $available_gateways ) {
     return $available_gateways;
 }
 add_filter( 'woocommerce_available_payment_gateways', 'sagar_disable_cod_for_bundle_products', 20 );
+
+/**
+ * Display ACF product videos in a floating widget (bottom right fixed) and lightbox modal slider.
+ */
+add_action( 'wp_footer', 'pxlt_single_product_acf_video_lightbox' );
+function pxlt_single_product_acf_video_lightbox() {
+    if ( ! is_product() ) {
+        return;
+    }
+
+    $post_id = get_the_ID();
+    if ( ! $post_id ) {
+        return;
+    }
+
+    $videos = array();
+
+    // 1. Check ACF get_field('videos_group')
+    if ( function_exists( 'get_field' ) ) {
+        $group = get_field( 'videos_group', $post_id );
+        if ( is_array( $group ) ) {
+            foreach ( $group as $val ) {
+                if ( ! empty( $val ) && is_string( $val ) ) {
+                    $videos[] = trim( $val );
+                }
+            }
+        }
+    }
+
+    // 2. Check post meta fallbacks if empty
+    if ( empty( $videos ) ) {
+        for ( $i = 1; $i <= 10; $i++ ) {
+            $url = get_post_meta( $post_id, 'videos_group_video_' . $i, true );
+            if ( empty( $url ) ) {
+                $url = get_post_meta( $post_id, 'video_' . $i, true );
+            }
+            if ( ! empty( $url ) && is_string( $url ) ) {
+                $videos[] = trim( $url );
+            }
+        }
+    }
+
+    $videos = array_values( array_unique( array_filter( $videos ) ) );
+
+    if ( empty( $videos ) ) {
+        return;
+    }
+
+    $first_video = $videos[0];
+    $count       = count( $videos );
+    ?>
+    <!-- Floating Video Badge (Bottom Right Fixed) -->
+    <div id="pxlt-floating-video-badge" class="pxlt-floating-video-badge">
+        <button type="button" class="pxlt-floating-video-close" aria-label="Close Floating Video">&times;</button>
+        <div class="pxlt-floating-video-inner">
+            <?php if ( preg_match( '/\.(mp4|webm|ogg|mov)(\?.*)?$/i', $first_video ) ) : ?>
+                <video src="<?php echo esc_url( $first_video ); ?>" autoplay muted loop playsinline></video>
+            <?php else : ?>
+                <div class="pxlt-floating-video-placeholder">
+                    <span class="pxlt-play-icon">&#9654;</span>
+                </div>
+            <?php endif; ?>
+            
+            <?php /* ?>
+            <div class="pxlt-floating-video-overlay">
+                <span class="pxlt-floating-play-btn">&#9654;</span>
+                <span class="pxlt-floating-label">Watch Video<?php echo $count > 1 ? ' (' . $count . ')' : ''; ?></span>
+            </div>
+            <?php */ ?>
+        </div>
+    </div>
+
+    <!-- Lightbox Video Modal -->
+    <div id="pxlt-video-lightbox-modal" class="pxlt-video-lightbox-modal">
+        <div class="pxlt-video-lightbox-overlay"></div>
+        <button type="button" class="pxlt-video-lightbox-close" aria-label="Close Lightbox Modal">&times;</button>
+
+        <div class="pxlt-video-lightbox-content">
+            <?php if ( $count > 1 ) : ?>
+                <button type="button" class="pxlt-slider-arrow pxlt-slider-prev" aria-label="Previous Video">&#10094;</button>
+            <?php endif; ?>
+
+            <div class="pxlt-video-slider-container">
+                <div class="pxlt-video-slider-track">
+                    <?php foreach ( $videos as $index => $video_url ) : ?>
+                        <div class="pxlt-video-slide <?php echo $index === 0 ? 'active' : ''; ?>" data-index="<?php echo $index; ?>">
+                            <?php
+                            if ( preg_match( '/\.(mp4|webm|ogg|mov)(\?.*)?$/i', $video_url ) ) {
+                                echo '<video src="' . esc_url( $video_url ) . '" controls playsinline></video>';
+                            } elseif ( preg_match( '/(youtube\.com|youtu\.be)/i', $video_url ) ) {
+                                preg_match( '/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/', $video_url, $matches );
+                                $yt_id = ! empty( $matches[1] ) ? $matches[1] : '';
+                                $embed_url = 'https://www.youtube.com/embed/' . $yt_id . '?enablejsapi=1&autoplay=0';
+                                echo '<iframe src="' . esc_url( $embed_url ) . '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                            } elseif ( preg_match( '/vimeo\.com/i', $video_url ) ) {
+                                preg_match( '/vimeo\.com\/(?:.*\/)?(\d+)/', $video_url, $matches );
+                                $vm_id = ! empty( $matches[1] ) ? $matches[1] : '';
+                                $embed_url = 'https://player.vimeo.com/video/' . $vm_id;
+                                echo '<iframe src="' . esc_url( $embed_url ) . '" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+                            } else {
+                                echo '<video src="' . esc_url( $video_url ) . '" controls playsinline></video>';
+                            }
+                            ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
+                <?php if ( $count > 1 ) : ?>
+                    <div class="pxlt-video-slider-dots">
+                        <?php foreach ( $videos as $index => $video_url ) : ?>
+                            <span class="pxlt-slider-dot <?php echo $index === 0 ? 'active' : ''; ?>" data-slide="<?php echo $index; ?>"></span>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+            <?php if ( $count > 1 ) : ?>
+                <button type="button" class="pxlt-slider-arrow pxlt-slider-next" aria-label="Next Video">&#10095;</button>
+            <?php endif; ?>
+        </div>
+    </div>
+    <?php
+}
+
