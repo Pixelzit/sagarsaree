@@ -1705,6 +1705,9 @@ body.pxlt-video-modal-open {
   transition: all 0.2s ease;
   padding: 0;
 }
+.pxlt-video-lightbox-modal .pxlt-video-lightbox-close:hover {
+  background-color: var(--color-golden);
+}
 .pxlt-video-lightbox-modal .pxlt-video-lightbox-content {
   position: relative;
   z-index: 1000000;

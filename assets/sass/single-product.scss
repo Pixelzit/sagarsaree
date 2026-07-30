@@ -660,6 +660,10 @@ body.pxlt-video-modal-open {
         z-index: 1000001;
         transition: all 0.2s ease;
         padding: 0;
+
+        &:hover {
+            background-color: var(--color-golden);
+        }
     }
 
     .pxlt-video-lightbox-content {
