@@ -1715,11 +1715,12 @@ body.pxlt-video-modal-open {
 .pxlt-video-lightbox-modal .pxlt-video-lightbox-content {
   position: relative;
   z-index: 1000000;
-  height: calc(100vh - 110px);
+  height: 92dvh;
   aspect-ratio: 9/16;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translateY(-2%);
 }
 .pxlt-video-lightbox-modal .pxlt-video-lightbox-content .pxlt-slider-arrow {
   position: absolute;
@@ -1791,12 +1792,12 @@ body.pxlt-video-modal-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-top: 15px;
+  gap: 8px;
+  margin-top: 8px;
 }
 .pxlt-video-lightbox-modal .pxlt-video-lightbox-content .pxlt-video-slider-container .pxlt-video-slider-dots .pxlt-slider-dot {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.35);
   cursor: pointer;
@@ -1804,7 +1805,7 @@ body.pxlt-video-modal-open {
 }
 .pxlt-video-lightbox-modal .pxlt-video-lightbox-content .pxlt-video-slider-container .pxlt-video-slider-dots .pxlt-slider-dot.active, .pxlt-video-lightbox-modal .pxlt-video-lightbox-content .pxlt-video-slider-container .pxlt-video-slider-dots .pxlt-slider-dot:hover {
   background: #ecb41c;
-  transform: scale(1.25);
+  transform: scale(1.15);
 }
 
 .home .site-content {
