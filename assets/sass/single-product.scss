@@ -505,6 +505,7 @@
 
 /* ACF Floating Video Badge & Lightbox Modal */
 .pxlt-floating-video-badge {
+    display: none;
     position: fixed;
     bottom: 20px;
     left: 20px;
@@ -628,7 +629,7 @@ body.pxlt-video-modal-open {
 .pxlt-video-lightbox-modal {
     position: fixed;
     inset: 0;
-    z-index: 999999;
+    z-index: 9999999999;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -70,6 +70,44 @@ jQuery(function ($) {
         var totalSlides = $slides.length;
         var currentIndex = 0;
 
+        // Show badge 5 seconds after page load AND after first video is loaded
+        var is5SecPassed = false;
+        var isFirstVideoReady = false;
+        var isBadgeRevealed = false;
+
+        function tryRevealFloatingBadge() {
+            if (is5SecPassed && isFirstVideoReady && !isBadgeRevealed) {
+                isBadgeRevealed = true;
+                $floatingBadge.stop(true, true).fadeIn(500);
+            }
+        }
+
+        setTimeout(function () {
+            is5SecPassed = true;
+            tryRevealFloatingBadge();
+        }, 5000);
+
+        var $badgeVideo = $floatingBadge.find('video');
+        if ($badgeVideo.length) {
+            var badgeVid = $badgeVideo.get(0);
+            if (badgeVid && badgeVid.readyState >= 2) {
+                isFirstVideoReady = true;
+                tryRevealFloatingBadge();
+            } else {
+                $badgeVideo.one('loadeddata canplay', function () {
+                    isFirstVideoReady = true;
+                    tryRevealFloatingBadge();
+                });
+                setTimeout(function () {
+                    isFirstVideoReady = true;
+                    tryRevealFloatingBadge();
+                }, 8000);
+            }
+        } else {
+            isFirstVideoReady = true;
+            tryRevealFloatingBadge();
+        }
+
         function pauseSlideMedia($slide) {
             if (!$slide || !$slide.length) return;
             var vid = $slide.find('video').get(0);
