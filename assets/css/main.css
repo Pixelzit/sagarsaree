@@ -1715,8 +1715,7 @@ body.pxlt-video-modal-open {
 .pxlt-video-lightbox-modal .pxlt-video-lightbox-content {
   position: relative;
   z-index: 1000000;
-  width: 90%;
-  max-width: 450px;
+  height: calc(100vh - 110px);
   aspect-ratio: 9/16;
   display: flex;
   align-items: center;
