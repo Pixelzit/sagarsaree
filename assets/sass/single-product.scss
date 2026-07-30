@@ -505,6 +505,7 @@
 
 /* ACF Floating Video Badge & Lightbox Modal */
 .pxlt-floating-video-badge {
+    display: none;
     position: fixed;
     bottom: 20px;
     left: 20px;
@@ -524,9 +525,9 @@
     }
 
     @media (max-width: 767px) {
-        width: 105px;
+        width: 80px;
         bottom: 75px;
-        right: 15px;
+        left: 12px;
         border-radius: 12px;
     }
 
@@ -628,7 +629,7 @@ body.pxlt-video-modal-open {
 .pxlt-video-lightbox-modal {
     position: fixed;
     inset: 0;
-    z-index: 999999;
+    z-index: 9999999999;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -687,7 +688,7 @@ body.pxlt-video-modal-open {
             padding: 0;
             width: 40px;
             height: 40px;
-            background-color: var(--color-white);
+            background-color: rgba(255, 255, 255, 0.60);
             color: var(--color-hover);
             font-size: 20px;
             display: flex;
@@ -696,6 +697,10 @@ body.pxlt-video-modal-open {
             cursor: pointer;
             z-index: 1000002;
             transition: all 0.2s ease;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 1);
+            }
 
             &.pxlt-slider-prev {
                 left: -65px;
