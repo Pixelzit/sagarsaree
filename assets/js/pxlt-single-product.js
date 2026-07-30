@@ -70,6 +70,21 @@ jQuery(function ($) {
         var totalSlides = $slides.length;
         var currentIndex = 0;
 
+        function pauseSlideMedia($slide) {
+            if (!$slide || !$slide.length) return;
+            var vid = $slide.find('video').get(0);
+            if (vid && typeof vid.pause === 'function') {
+                vid.pause();
+            }
+            var $iframe = $slide.find('iframe');
+            if ($iframe.length) {
+                var src = $iframe.attr('src');
+                if (src) {
+                    $iframe.attr('src', src);
+                }
+            }
+        }
+
         function goToSlide(index) {
             if (index < 0) {
                 index = totalSlides - 1;
@@ -77,17 +92,9 @@ jQuery(function ($) {
                 index = 0;
             }
 
-            // Pause video or reset iframe on previous slide
+            // Pause video on previous active slide only
             var $prevSlide = $slides.eq(currentIndex);
-            var prevVid = $prevSlide.find('video').get(0);
-            if (prevVid) {
-                prevVid.pause();
-            }
-            var $prevIframe = $prevSlide.find('iframe');
-            if ($prevIframe.length) {
-                var src = $prevIframe.attr('src');
-                $prevIframe.attr('src', src);
-            }
+            pauseSlideMedia($prevSlide);
 
             currentIndex = index;
 
@@ -97,40 +104,40 @@ jQuery(function ($) {
             // Play video on new active slide
             var $activeSlide = $slides.eq(currentIndex);
             var activeVid = $activeSlide.find('video').get(0);
-            if (activeVid) {
-                activeVid.play().catch(function () {});
+            if (activeVid && typeof activeVid.play === 'function') {
+                activeVid.play().catch(function () { });
             }
         }
 
         function openVideoModal() {
             $videoModal.addClass('is-open');
             $('body').addClass('pxlt-video-modal-open');
-            goToSlide(currentIndex);
+            window.requestAnimationFrame(function () {
+                goToSlide(currentIndex);
+            });
         }
 
         function closeVideoModal() {
             $videoModal.removeClass('is-open');
             $('body').removeClass('pxlt-video-modal-open');
-
-            $slides.find('video').each(function () {
-                this.pause();
-            });
-            $slides.find('iframe').each(function () {
-                var src = $(this).attr('src');
-                $(this).attr('src', src);
-            });
+            pauseSlideMedia($slides.eq(currentIndex));
         }
 
-        // Open Lightbox on floating badge click
-        $floatingBadge.on('click', '.pxlt-floating-video-inner', function (e) {
+        // Open Lightbox on floating badge click (direct or delegated)
+        $(document).on('click', '#pxlt-floating-video-badge, .pxlt-floating-video-inner', function (e) {
+            if ($(e.target).closest('.pxlt-floating-video-close').length) {
+                return;
+            }
             e.preventDefault();
+            e.stopPropagation();
             openVideoModal();
         });
 
         // Close floating badge button
-        $floatingBadge.on('click', '.pxlt-floating-video-close', function (e) {
+        $(document).on('click', '.pxlt-floating-video-close', function (e) {
+            e.preventDefault();
             e.stopPropagation();
-            $floatingBadge.fadeOut(300);
+            $('#pxlt-floating-video-badge').fadeOut(200);
         });
 
         // Close lightbox modal
