@@ -85,7 +85,7 @@ jQuery(function ($) {
         setTimeout(function () {
             is5SecPassed = true;
             tryRevealFloatingBadge();
-        }, 5000);
+        }, 3000);
 
         var $badgeVideo = $floatingBadge.find('video');
         if ($badgeVideo.length) {
