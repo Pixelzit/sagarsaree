@@ -225,7 +225,8 @@
 
             &.product-quantity {
                 input {
-                    border: 1px solid #000000 !important;
+                    border: 1px solid #ddd !important;
+                    border-radius: 0 !important;
                 }
             }
         }
@@ -244,6 +245,22 @@
             .button {
                 background: #000000;
                 color: #fff;
+            }
+        }
+
+        .pxlt-quabtity {
+            display: flex;
+
+            .minus,
+            .plus {
+                background: none !important;
+                padding: 8px 16px;
+                border: 1px solid #ddd;
+                border-radius: 0;
+
+                &:hover {
+                    color: var(--color-dark);
+                }
             }
         }
 

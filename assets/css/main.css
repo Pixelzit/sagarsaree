@@ -568,6 +568,38 @@ body .nfancybox-container {
   font-weight: 600;
 }
 
+.woocommerce-info {
+  background-color: #c59d4c !important;
+}
+.woocommerce-info::before {
+  font-weight: bold;
+}
+
+.woocommerce-tabs #reviews .woocommerce-noreviews {
+  background-color: #c59d4c;
+}
+.woocommerce-tabs #reviews .woocommerce-noreviews::before {
+  font-weight: bold;
+}
+
+.woocommerce-billing-fields__field-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 17px;
+}
+
+.woocommerce-billing-fields__field-wrapper label {
+  margin-bottom: 5px;
+}
+
+.checkout.woocommerce-checkout h3 {
+  margin-bottom: 25px;
+}
+
+.woocommerce-privacy-policy-text {
+  margin-bottom: 40px;
+}
+
 @media only screen and (max-width: 767px) {
   .pagination .page-numbers li .page-numbers,
   .woocommerce-pagination .page-numbers li .page-numbers {
@@ -763,6 +795,10 @@ body.sagar-user-not-wholesaler li.product.product-type-woosb .ajax_add_to_cart {
 }
 .wpcf7-form.invalid .wpcf7-response-output {
   color: #ef4444 !important;
+}
+
+.swal2-container {
+  z-index: 106000 !important;
 }
 
 .sagarsaree-banner-slider .elementor-swiper-button {
@@ -2141,7 +2177,8 @@ body.pxlt-video-modal-open {
   color: #000;
 }
 .woocommerce-cart-form table tbody td.product-quantity input {
-  border: 1px solid #000000 !important;
+  border: 1px solid #ddd !important;
+  border-radius: 0 !important;
 }
 .woocommerce-cart-form table input {
   box-shadow: none;
@@ -2154,6 +2191,20 @@ body.pxlt-video-modal-open {
 .woocommerce-cart-form table .actions .button {
   background: #000000;
   color: #fff;
+}
+.woocommerce-cart-form table .pxlt-quabtity {
+  display: flex;
+}
+.woocommerce-cart-form table .pxlt-quabtity .minus,
+.woocommerce-cart-form table .pxlt-quabtity .plus {
+  background: none !important;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 0;
+}
+.woocommerce-cart-form table .pxlt-quabtity .minus:hover,
+.woocommerce-cart-form table .pxlt-quabtity .plus:hover {
+  color: var(--color-dark);
 }
 
 .cart-collaterals .cart_totals h2 {
