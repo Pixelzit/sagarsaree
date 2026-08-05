@@ -108,6 +108,7 @@ function pxlt_currency_convert_2($price) {
 
 
 add_filter('ppom_option_price','pxlt_currency_convert');
+add_filter('ppom_cart_line_total', 'pxlt_currency_convert_back', 99);
 //add_filter('ppom_product_price','pxlt_currency_convert_back');
 
 
