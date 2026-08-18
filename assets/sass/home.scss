@@ -353,7 +353,9 @@
                 margin: 0;
                 padding: 4px 16px;
                 border-radius: 30px;
-                background: rgba(236, 180, 28, 0.5);
+                background: rgb(191 31 60 / 1);
+                border-color: rgb(191 31 60 / 1);
+                font-weight: 700;
                 color: #fff;
 
                 @media (max-width: 767px) {

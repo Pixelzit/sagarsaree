@@ -265,7 +265,9 @@ input[type=search]:focus {
   left: 12px;
   padding: 4px 16px;
   border-radius: 30px;
-  background: rgba(236, 180, 28, 0.5);
+  background: rgb(191, 31, 60);
+  border-color: rgb(191, 31, 60);
+  font-weight: 700;
   color: #fff;
 }
 #primary .products .product .wpb-get-a-quote-button-btn {
@@ -1065,7 +1067,9 @@ body.sagar-user-not-wholesaler li.product.product-type-woosb .ajax_add_to_cart {
   margin: 0;
   padding: 4px 16px;
   border-radius: 30px;
-  background: rgba(236, 180, 28, 0.5);
+  background: rgb(191, 31, 60);
+  border-color: rgb(191, 31, 60);
+  font-weight: 700;
   color: #fff;
 }
 @media (max-width: 767px) {

@@ -258,3 +258,73 @@ function pxlt_add_get_original_image_button() {
     <?php
 }
 
+/**
+ * Display discount percentage in the sale flash badge instead of 'Sale!'
+ */
+function pxlt_custom_sale_percentage_flash( $html, $post, $product ) {
+    if ( ! $product || ! $product->is_on_sale() ) {
+        return $html;
+    }
+
+    $percentage = 0;
+
+    if ( $product->is_type( 'variable' ) ) {
+        $percentages = array();
+        $prices      = $product->get_variation_prices();
+
+        if ( ! empty( $prices['regular_price'] ) ) {
+            foreach ( $prices['regular_price'] as $key => $regular_price ) {
+                $sale_price = isset( $prices['sale_price'][ $key ] ) ? (float) $prices['sale_price'][ $key ] : 0;
+                $reg_price  = (float) $regular_price;
+                if ( $reg_price > 0 && $sale_price > 0 && $sale_price < $reg_price ) {
+                    $percentages[] = round( ( ( $reg_price - $sale_price ) / $reg_price ) * 100 );
+                }
+            }
+        }
+
+        if ( ! empty( $percentages ) ) {
+            $percentage = max( $percentages );
+        }
+    } elseif ( $product->is_type( 'grouped' ) ) {
+        $percentages = array();
+        $children    = $product->get_children();
+
+        foreach ( $children as $child_id ) {
+            $child_product = wc_get_product( $child_id );
+            if ( $child_product && $child_product->is_on_sale() ) {
+                $regular_price = (float) $child_product->get_regular_price();
+                $sale_price    = (float) $child_product->get_sale_price();
+                if ( empty( $sale_price ) ) {
+                    $sale_price = (float) $child_product->get_price();
+                }
+                if ( $regular_price > 0 && $sale_price > 0 && $sale_price < $regular_price ) {
+                    $percentages[] = round( ( ( $regular_price - $sale_price ) / $regular_price ) * 100 );
+                }
+            }
+        }
+
+        if ( ! empty( $percentages ) ) {
+            $percentage = max( $percentages );
+        }
+    } else {
+        $regular_price = (float) $product->get_regular_price();
+        $sale_price    = (float) $product->get_sale_price();
+
+        if ( empty( $sale_price ) ) {
+            $sale_price = (float) $product->get_price();
+        }
+
+        if ( $regular_price > 0 && $sale_price > 0 && $sale_price < $regular_price ) {
+            $percentage = round( ( ( $regular_price - $sale_price ) / $regular_price ) * 100 );
+        }
+    }
+
+    if ( $percentage > 0 ) {
+        return '<span class="onsale">' . esc_html( $percentage . '% OFF' ) . '</span>';
+    }
+
+    return $html;
+}
+add_filter( 'woocommerce_sale_flash', 'pxlt_custom_sale_percentage_flash', 20, 3 );
+
+
