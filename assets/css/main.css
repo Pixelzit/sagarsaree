@@ -1278,8 +1278,15 @@ body.sagar-user-not-wholesaler li.product.product-type-woosb .ajax_add_to_cart {
   padding: 14px 40px;
   transition: 0.3s ease-in-out;
 }
-.single-product .product .summary.entry-summary .in-stock {
+.single-product .product .summary.entry-summary .in-stock,
+.single-product .product .summary.entry-summary .out-of-stock {
   margin-block: 15px;
+  font-family: playfair;
+  font-size: 18px;
+  font-weight: 600;
+}
+.single-product .product .summary.entry-summary .out-of-stock::before {
+  display: none;
 }
 .single-product .product .summary.entry-summary .product_title {
   font-family: playfair;

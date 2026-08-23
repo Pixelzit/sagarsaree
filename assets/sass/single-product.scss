@@ -104,8 +104,18 @@
                 transition: 0.3s ease-in-out;
             }
 
-            .in-stock {
+            .in-stock,
+            .out-of-stock {
                 margin-block: 15px;
+                font-family: playfair;
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            .out-of-stock {
+                &::before {
+                    display: none;
+                }
             }
 
             .product_title {

@@ -327,4 +327,34 @@ function pxlt_custom_sale_percentage_flash( $html, $post, $product ) {
 }
 add_filter( 'woocommerce_sale_flash', 'pxlt_custom_sale_percentage_flash', 20, 3 );
 
+/**
+ * Display 'Sold' when product stock is 0 or out of stock.
+ */
+function pxlt_custom_stock_availability( $availability, $product ) {
+    if ( ! is_a( $product, 'WC_Product' ) ) {
+        return $availability;
+    }
+
+    if ( ! $product->is_in_stock() || ( $product->managing_stock() && $product->get_stock_quantity() !== null && $product->get_stock_quantity() <= 0 ) ) {
+        $availability['availability'] = __( 'Sold', 'woocommerce' );
+    }
+
+    return $availability;
+}
+add_filter( 'woocommerce_get_availability', 'pxlt_custom_stock_availability', 20, 2 );
+
+function pxlt_custom_stock_availability_text( $availability, $product ) {
+    if ( ! is_a( $product, 'WC_Product' ) ) {
+        return $availability;
+    }
+
+    if ( ! $product->is_in_stock() || ( $product->managing_stock() && $product->get_stock_quantity() !== null && $product->get_stock_quantity() <= 0 ) ) {
+        $availability = __( 'Sold', 'woocommerce' );
+    }
+
+    return $availability;
+}
+add_filter( 'woocommerce_get_availability_text', 'pxlt_custom_stock_availability_text', 20, 2 );
+
+
 
