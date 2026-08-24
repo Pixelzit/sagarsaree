@@ -259,10 +259,31 @@ function pxlt_add_get_original_image_button() {
 }
 
 /**
- * Display discount percentage in the sale flash badge instead of 'Sale!'
+ * Helper function to check if product is out of stock.
+ */
+function pxlt_is_product_out_of_stock( $product ) {
+    if ( ! is_a( $product, 'WC_Product' ) ) {
+        return false;
+    }
+    if ( ! $product->is_in_stock() || ( $product->managing_stock() && $product->get_stock_quantity() !== null && $product->get_stock_quantity() <= 0 ) ) {
+        return true;
+    }
+    return false;
+}
+
+/**
+ * Display discount percentage in the sale flash badge instead of 'Sale!', or 'SOLD' if out of stock.
  */
 function pxlt_custom_sale_percentage_flash( $html, $post, $product ) {
-    if ( ! $product || ! $product->is_on_sale() ) {
+    if ( ! $product ) {
+        return $html;
+    }
+
+    if ( pxlt_is_product_out_of_stock( $product ) ) {
+        return '<span class="onsale sold-out">' . esc_html__( 'SOLD', 'woocommerce' ) . '</span>';
+    }
+
+    if ( ! $product->is_on_sale() ) {
         return $html;
     }
 
@@ -328,6 +349,22 @@ function pxlt_custom_sale_percentage_flash( $html, $post, $product ) {
 add_filter( 'woocommerce_sale_flash', 'pxlt_custom_sale_percentage_flash', 20, 3 );
 
 /**
+ * Display 'SOLD' badge for out of stock products that are not on sale.
+ */
+function pxlt_display_out_of_stock_badge() {
+    global $product;
+    if ( ! is_a( $product, 'WC_Product' ) ) {
+        return;
+    }
+
+    if ( pxlt_is_product_out_of_stock( $product ) && ! $product->is_on_sale() ) {
+        echo '<span class="onsale sold-out">' . esc_html__( 'SOLD', 'woocommerce' ) . '</span>';
+    }
+}
+add_action( 'woocommerce_before_shop_loop_item_title', 'pxlt_display_out_of_stock_badge', 9 );
+add_action( 'woocommerce_before_single_product_summary', 'pxlt_display_out_of_stock_badge', 9 );
+
+/**
  * Display 'Sold' when product stock is 0 or out of stock.
  */
 function pxlt_custom_stock_availability( $availability, $product ) {
@@ -335,7 +372,7 @@ function pxlt_custom_stock_availability( $availability, $product ) {
         return $availability;
     }
 
-    if ( ! $product->is_in_stock() || ( $product->managing_stock() && $product->get_stock_quantity() !== null && $product->get_stock_quantity() <= 0 ) ) {
+    if ( pxlt_is_product_out_of_stock( $product ) ) {
         $availability['availability'] = __( 'Sold', 'woocommerce' );
     }
 
@@ -348,13 +385,14 @@ function pxlt_custom_stock_availability_text( $availability, $product ) {
         return $availability;
     }
 
-    if ( ! $product->is_in_stock() || ( $product->managing_stock() && $product->get_stock_quantity() !== null && $product->get_stock_quantity() <= 0 ) ) {
+    if ( pxlt_is_product_out_of_stock( $product ) ) {
         $availability = __( 'Sold', 'woocommerce' );
     }
 
     return $availability;
 }
 add_filter( 'woocommerce_get_availability_text', 'pxlt_custom_stock_availability_text', 20, 2 );
+
 
 
 
