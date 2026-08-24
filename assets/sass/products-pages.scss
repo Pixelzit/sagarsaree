@@ -42,10 +42,10 @@
             }
 
             span.onsale {
+                font-family: playfair;
                 font-size: 12px;
-                font-weight: normal;
+                font-weight: 700;
                 line-height: 16px;
-                background: #000;
                 color: #fff;
                 position: absolute;
                 margin: 0;
@@ -55,7 +55,6 @@
                 border-radius: 30px;
                 background: rgb(191 31 60 / 1);
                 border-color: rgb(191 31 60 / 1);
-                font-weight: 700;
                 color: #fff;
             }
 

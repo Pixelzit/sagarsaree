@@ -254,10 +254,10 @@ input[type=search]:focus {
   }
 }
 #primary .products .product span.onsale {
+  font-family: playfair;
   font-size: 12px;
-  font-weight: normal;
+  font-weight: 700;
   line-height: 16px;
-  background: #000;
   color: #fff;
   position: absolute;
   margin: 0;
@@ -267,7 +267,6 @@ input[type=search]:focus {
   border-radius: 30px;
   background: rgb(191, 31, 60);
   border-color: rgb(191, 31, 60);
-  font-weight: 700;
   color: #fff;
 }
 #primary .products .product .wpb-get-a-quote-button-btn {
@@ -1247,10 +1246,10 @@ body.sagar-user-not-wholesaler li.product.product-type-woosb .ajax_add_to_cart {
   }
 }
 .single-product .product span.onsale {
+  font-family: playfair;
   font-size: 12px;
-  font-weight: normal;
+  font-weight: 700;
   line-height: 16px;
-  background: #000;
   color: #fff;
   position: absolute;
   margin: 0;
@@ -1258,7 +1257,8 @@ body.sagar-user-not-wholesaler li.product.product-type-woosb .ajax_add_to_cart {
   left: 12px;
   padding: 4px 16px;
   border-radius: 30px;
-  background: rgba(236, 180, 28, 0.5);
+  background: rgb(191, 31, 60);
+  border-color: rgb(191, 31, 60);
   color: #fff;
 }
 .single-product .product .onsale:has(+ .images) {
